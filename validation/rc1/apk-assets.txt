@@ -1,0 +1,7 @@
+pad_walk: res/Ah.png 160x146, 35873 bytes
+pad_dash: res/eN.png 160x90, 23708 bytes
+pad_guard: res/b-.png 160x158, 36126 bytes
+pad_attack: res/jN.png 160x85, 19354 bytes
+pad_jump: res/zm.png 140x160, 31029 bytes
+pad_elf: res/_G.png 160x132, 31338 bytes
+APK bytes=7704712 SHA256=d5365cebc694abea1944aedc156c226b8b83d3ef2e5d6661cac216e471bffa24

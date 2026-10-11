@@ -1,0 +1,8 @@
+BUILD SUCCESSFUL in 3m 4s
+Estrutura APK verificada: ARM64, ELF 16 KiB, entrada SDL e sem ROM/BIOS. Instalação e gameplay precisam de dispositivo.
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verification succesful
