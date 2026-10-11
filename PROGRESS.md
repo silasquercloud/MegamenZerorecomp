@@ -73,3 +73,13 @@ Ainda faltam validação de instalação, boot e gameplay em dispositivo, contro
 - Upscale SDL real 1–8×, automático econômico 1×; sete modos de proporção; nearest/bilinear aplicados às texturas. Alteração ao vivo pelo botão VÍDEO, JNI atômico e operações SDL exclusivamente na thread de renderização.
 - Novo ícone de capacete vermelho gerado/local, adaptativo e cinco densidades, sem placeholder. Importações, launcher, volume, controles, saves e logs preservados.
 - Teste SDL software real: texturas 1–8×, filtros com pixels distintos, proporções, caps; 60 iterações simuladas/30 apresentações no modo 30 e 60 nos demais. Benchmark host registrado; não representa GPU Android. Boot real 120 frames repetido; seis testes existentes executados. Relatório em validation/enhanced/NATIVE-REPORT.md reconhece fallback ARMv4T e limites de validação Android.
+
+### Publicação Enhanced confirmada
+
+- Fonte compilada: `f3e88d7` (`codex/android-arm64`); versão instalada 0.2.1-test.1 / versionCode 3 / nome Enhanced.
+- APK ARM64: 7.498.240 bytes; SHA-256 `3259c6cf69b4701f62316b98daf6b3c86e82b6845fd7c9f9a73e10abf4ddbb0d`.
+- Prerelease pública: https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.1-test.1
+- APK HTTPS: https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.1-test.1/MegaManZeroNativeEnhanced-0.2.1-test.1-arm64-v8a.apk
+- Actions https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38130128081 — sucesso: checksums de todos os anexos, APK ELF/ABI/ausência de dumps, assinatura, zipalign e publicação. É verificação do APK compilado localmente, não rebuild do corpus privado.
+- Relatório, símbolos ARM64, logs SDL, metadados APK e SHA256SUMS anexados. Download HTTPS público comparado byte a byte com APK local: idêntico.
+- ADB sem dispositivo. Nenhuma captura Android desta versão foi gerada; overlay/opções ao vivo/desempenho físico ainda pendentes no aparelho. O interpretador fallback upstream permanece documentado; FPS acima de ~60 não foi desbloqueado.
