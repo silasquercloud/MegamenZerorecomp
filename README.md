@@ -1,143 +1,180 @@
-```markdown
+
 <div align="center">
 
 # ⚔️ MEGA MAN ZERO NATIVE
 
-### The legendary Reploid returns — now on Android ARM64.
+### O lendário Zero está chegando ao Android ARM64!
 
 ![Android](https://img.shields.io/badge/Android-9%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![ARM64](https://img.shields.io/badge/Architecture-ARM64-E11D48?style=for-the-badge)
+![ARM64](https://img.shields.io/badge/Arquitetura-ARM64-E11D48?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Experimental-FFB020?style=for-the-badge)
-![C++](https://img.shields.io/badge/C%2B%2B-Native-00599C?style=for-the-badge&logo=cplusplus)
+![C++](https://img.shields.io/badge/C%2B%2B-Nativo-00599C?style=for-the-badge&logo=cplusplus)
 
 <br>
 
-<img src="assets/gifs/zero-saber.gif" width="430" alt="Zero using his Z-Saber">
+<img src="assets/gifs/zero-saber.gif" width="430" alt="Zero utilizando sua Z-Saber">
 
-**A native Android ARM64 port based on MegaManZeroRecomp.**
+### ⚡ Recompilado. Reinventado. Renascido.
 
-[📥 Download APK](https://github.com/silasquercloud/MegamenZerorecomp/releases) • [🐛 Report a Bug](https://github.com/silasquercloud/MegamenZerorecomp/issues)
+**Um projeto experimental de port nativo de Mega Man Zero para Android ARM64.**
+
+[📥 BAIXAR APK](https://github.com/silasquercloud/MegamenZerorecomp/releases) • [🐛 REPORTAR ERRO](https://github.com/silasquercloud/MegamenZerorecomp/issues)
 
 </div>
 
 ---
 
-## 🌌 About the Project
+## 🌌 Sobre o projeto
 
-**Mega Man Zero Native** is an experimental project bringing the original Game Boy Advance title to modern Android devices using a statically recompiled runtime.
+**Mega Man Zero Native** é um projeto experimental que busca levar o clássico Mega Man Zero, originalmente lançado para Game Boy Advance, aos dispositivos Android ARM64.
 
-The goal is to preserve the original experience while adding native Android integration, touchscreen controls, gamepad support, and a custom interface.
+O projeto utiliza técnicas de **recompilação estática**, aproveitando o trabalho dos projetos MegaManZeroRecomp e gbarecomp.
 
-> ⚠️ **Experimental build:** The launcher and file import have been tested on Android. Gameplay boot, audio, controls, and saves are not yet confirmed working on a physical device.
+### 🎯 Nossos objetivos
+
+- Executar Mega Man Zero nativamente no Android ARM64.
+- Preservar a experiência original do jogo.
+- Criar um launcher personalizado inspirado em Mega Man Zero.
+- Implementar controles touchscreen.
+- Oferecer suporte a controles físicos.
+- Integrar áudio, gráficos e salvamentos.
+- Melhorar a compatibilidade e a estabilidade.
+
+> ⚠️ **AVISO:** Este projeto ainda está em desenvolvimento. O launcher e a importação de ROM/BIOS foram testados, mas o gameplay ainda não foi validado no Android.
 
 ---
 
-## ⚡ Zero in Action
+## ⚔️ Zero em ação
 
 <div align="center">
 
-<img src="assets/gifs/zero-combat.gif" width="370" alt="Zero in combat">
+<img src="assets/gifs/zero-combat.gif" width="380" alt="Zero em combate">
 
-*The Z-Saber never gets old.*
+### A lenda da Z-Saber continua!
 
 </div>
 
-## 🎮 Features
+---
 
-- Native ARM64 build using Android NDK.
-- Static recompilation framework.
-- ROM and BIOS import.
-- Android launcher.
-- Diagnostic logs.
-- Custom themed touch controls planned.
-- Gamepad support under development.
-- Persistent saves pending validation.
+## 🎮 Funcionalidades
+
+| Funcionalidade | Estado |
+|---|---|
+| APK Android ARM64 | ✅ Disponível |
+| Launcher Android | ✅ Funcional |
+| Importação de ROM | ✅ Testada |
+| Importação de BIOS | ✅ Testada |
+| Inicialização do gameplay | 🚧 Em desenvolvimento |
+| Renderização do jogo | 🧪 Não validada |
+| Áudio | 🧪 Não validado |
+| Controles touchscreen | 🚧 Em desenvolvimento |
+| Suporte a gamepad | 🧪 Não validado |
+| Sistema de salvamento | 🧪 Não validado |
+| Interface temática | 🎨 Planejada |
 
 ---
 
-## 📱 Requirements
+## 📱 Requisitos
 
-| Component | Requirement |
+| Componente | Requisito |
 |---|---|
-| Android | 9 or newer |
-| Architecture | ARM64 / arm64-v8a |
-| Game | Mega Man Zero |
-| Region | USA |
-| Revision | 0 |
-| Display | 240 × 160 native GBA resolution |
+| Sistema | Android 9 ou superior |
+| Arquitetura | ARM64 / arm64-v8a |
+| Jogo | Mega Man Zero |
+| Região | USA |
+| Revisão | 0 |
+| Resolução original | 240 × 160 |
 
-### Original Game Files
+### 📂 Arquivos necessários
 
-You must provide your own legally obtained game ROM and GBA BIOS dump.
+É necessário possuir seus próprios arquivos originais do jogo e da BIOS do Game Boy Advance.
 
-**Supported ROM SHA-1:**
+**ROM — Mega Man Zero (USA), revisão 0**
+
+SHA-1:
 
 `193b14120119162518a73c70876f0b8bffdbd96e`
 
-**GBA BIOS SHA-1:**
+**BIOS original do GBA**
+
+SHA-1:
 
 `300c20df6731a33952ded8c436f7f186d25d3492`
 
-No copyrighted game files are distributed with this project.
+**ROM e BIOS não são distribuídas com o aplicativo.**
 
 ---
 
-## 🚀 Installation
+## 🚀 Como instalar
 
-1. Download the latest experimental APK from GitHub Releases.
-2. Install it on a compatible ARM64 Android device.
-3. Open Mega Man Zero Native.
-4. Import your original ROM.
-5. Import your original GBA BIOS.
-6. Press **Play**.
+1. Acesse a página de Releases.
+2. Baixe a versão experimental mais recente do APK.
+3. Instale o aplicativo em um dispositivo Android ARM64.
+4. Abra o Mega Man Zero Native.
+5. Importe sua ROM original compatível.
+6. Importe sua BIOS original.
+7. Toque em **Jogar**.
 
-**Note:** Gameplay startup is still under development.
+> O boot do jogo ainda está sendo investigado. A instalação e a importação não garantem que o gameplay funcione.
 
----
-
-## 🛠️ Development Status
-
-| Component | Status |
-|---|---|
-| Android APK | ✅ Built |
-| Android launcher | ✅ Opens |
-| ROM import | ✅ Tested |
-| BIOS import | ✅ Tested |
-| Gameplay boot | 🚧 In progress |
-| Audio | 🧪 Not validated |
-| Touch overlay | 🚧 Planned |
-| Save system | 🧪 Not validated |
-
----
-
-## ❤️ The Legend Lives On
+### 📥 Download
 
 <div align="center">
 
-<img src="assets/gifs/zero-movement.gif" width="300" alt="Zero animation">
-
-### Recompiled. Reimagined. Reborn.
-
-*Built for fans of classic action games.*
+[![Baixar APK](https://img.shields.io/badge/BAIXAR_APK-ANDROID_ARM64-C11232?style=for-the-badge&logo=android&logoColor=white)](https://github.com/silasquercloud/MegamenZerorecomp/releases)
 
 </div>
 
 ---
 
-## 📜 Credits
+## 🛠️ Tecnologias
 
-This project builds upon:
+- C++
+- Android NDK
+- JNI
+- SDL
+- Gradle
+- ARM64
+- Recompilação estática
+- GitHub Actions
+
+---
+
+## 🔥 O futuro de Mega Man Zero Native
+
+<div align="center">
+
+<img src="assets/gifs/zero-movement.gif" width="320" alt="Zero em movimento">
+
+### O despertar de Zero está apenas começando.
+
+*Uma nova maneira de experimentar um clássico.*
+
+</div>
+
+---
+
+## 📜 Créditos
+
+Este projeto utiliza e adapta trabalhos dos seguintes projetos:
 
 - [MegaManZeroRecomp](https://github.com/mstan/MegaManZeroRecomp)
 - [gbarecomp](https://github.com/mstan/gbarecomp)
 
-Mega Man Zero and its characters belong to Capcom.
+**Mega Man Zero** e seus personagens pertencem à Capcom.
 
-This is an unofficial fan project. Preserve upstream license notices and attribution.
+Este é um projeto independente, não oficial e sem afiliação com a Capcom.
+
+As licenças e os avisos de atribuição dos componentes utilizados devem ser preservados.
+
+---
 
 <div align="center">
 
-**Made with ❤️ for the Mega Man Zero community.**
+### ❤️ Feito por fãs, para fãs.
+
+**MEGA MAN ZERO NATIVE**
+
+*Android ARM64 • Recompilação estática • Projeto experimental*
 
 </div>
-```
