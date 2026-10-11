@@ -1,0 +1,6 @@
+[submodule "MegaManZeroRecomp"]
+	path = MegaManZeroRecomp
+	url = https://github.com/mstan/MegaManZeroRecomp.git
+[submodule "gbarecomp"]
+	path = gbarecomp
+	url = https://github.com/mstan/gbarecomp.git
