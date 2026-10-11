@@ -1,0 +1,27 @@
+cpu_backend=static-recompiled
+MMZ_BOOT_07 — CPU/bus/dispatch recompilados inicializados
+scanline_backend=HLE (tile-span native-color composition)
+save_config source=game-config type=SRAM size=32768 (detected=SRAM signature="SRAM_V" @ 0x290BA8)
+self_heal_recompile=DISABLED (build default - pure Stage-1 interpreter bridge this session)
+MMZ_BOOT_06 — SDL VIDEO inicializado; áudio/controller verificados (erros acima)
+MMZ_BOOT_08 — Janela e renderer SDL criados
+host_window: renderer=opengl flags=0x0000000a vsync=no scaler=nearest
+host_window: open display=0 mode=800x600@0Hz
+host_window: touch policy=none claims=0x0 pad=hidden(default) emulation=off px_per_mm=3.78 insets=0,0,0,0
+[gbarecomp:runtime] present-in-place ON (frame-boundary resume misses eliminated structurally; GBARECOMP_PRESENT_IN_PLACE=0 to disable)
+MMZ_VIDEO cap_requested=0 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_VK_SWAPCHAIN 640x480 images=3
+MMZ_VK_READY gpu=llvmpipe (LLVM 19.1.7, 256 bits) images=3 upload_slots=2 present=FIFO extent=640x480
+MMZ_VK_FIRST_PRESENT result=0 framebuffer=240x160 upscale=1
+MMZ_BOOT_09 — Primeiro framebuffer GBA apresentado; frame=1
+MMZ_PHASE guest_ms=2.641 ppu_ms=0.011 audio_ms=0.008 input_ms=0.015 pacer_ms=12.356 interp_total=0 misses=0 p95=20.808 p99=21.352 acquire_ms=0.246 upload_ms=0.066 submit_ms=1.460 effect_ms=0.000
+MMZ_PERF render_fps=59.88 simulation_fps=61.88 frame_ms=16.70 peak_ms=21.35 cpu_ms_per_present=2.77 render_submit_vsync_ms=2.35
+MMZ_PHASE guest_ms=3.591 ppu_ms=0.008 audio_ms=0.009 input_ms=0.014 pacer_ms=10.162 interp_total=0 misses=0 p95=19.511 p99=29.369 acquire_ms=0.121 upload_ms=0.512 submit_ms=4.472 effect_ms=0.000
+MMZ_PERF render_fps=59.32 simulation_fps=59.32 frame_ms=16.86 peak_ms=21.53 cpu_ms_per_present=2.45 render_submit_vsync_ms=2.50
+[frame-phase] dumped 600 frames -> vulkan-final-phases.csv
+[idle] elided 8148764 loop iterations (114082696 cycles) over 459457 skip ops across 3 site(s)
+bounded_window start_frame=0 end_frame=600 presented=600 view_width=240 uncapped=0 seconds=10.424407 guest_fps=57.557 present_fps=57.557
+
+final_pc=0x080004ea unmapped=0 io_unhandled=0 steps=34 cycles=0 ppu_vcount=160 ppu_frames=600 frames_presented=600
+pal_nonzero=1024/1024 vram_nonzero=93614/98304 oam_nonzero=256/1024
+self_heal_coverage=FULLY_STATIC dispatch_misses=0 interpreted_insns=0 healed_native=0

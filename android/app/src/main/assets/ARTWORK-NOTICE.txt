@@ -3,3 +3,4 @@ Mega Man, Mega Man Zero and Zero are trademarks/characters of their respective o
 Logo glyph outlines derive from DejaVu Sans Bold Oblique; see DejaVu-LICENSE.txt.
 
 Enhanced 0.2.1: artwork for the red helmet launcher icon was generated for this project and packaged locally in adaptive and density-specific Android resources. It is unofficial fan artwork; Mega Man / Zero names and character rights remain with Capcom. No official game artwork file, ROM or BIOS is packaged as the icon.
+1.0 RC: six locally generated fan-art control sprites (walking, dash, guard, attack, jump, fairy), individually cropped with alpha and nearest sampling. No user spritesheet was available in the workspace; these are original illustrative control icons, not sprites extracted from ROM and not proof of specific game abilities.

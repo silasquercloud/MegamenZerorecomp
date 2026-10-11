@@ -1,4 +1,12 @@
-## Mega Man Zero Native 0.2.0-test.1
+## Mega Man Zero Native 1.0.0-rc.1
+
+Release Candidate ARM64 com backend Vulkan e fallback SDL, controles multitouch editáveis, macro remapeável, FPS/frametime e filtros CRT, scanlines, LCD e monocromático. Durante o jogo, abra **AJUSTES** para alterar vídeo e controles; as preferências são salvas.
+
+Upscale até 8× mantém o framebuffer original 240×160. 90/120/ilimitado permanecem limitados à produção original de aproximadamente 59,73 frames/s; não há aceleração ou interpolação artificial.
+
+**Ainda não é Final:** núcleo Vulkan e jogo recompilado testados no Linux; Vulkan, áudio, controles, retomada e estabilidade desta versão aguardam comprovação em Android real. [Relatório técnico e limitações](validation/rc1/NATIVE-REPORT.md). O APK não inclui ROM/BIOS. [Releases](https://github.com/silasquercloud/MegamenZerorecomp/releases).
+
+### Histórico: 0.2.0-test.1
 
 [Baixar APK ARM64](https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.0-test.1/MegaManZeroNative-0.2.0-test.1-arm64-v8a.apk) • [Prerelease](https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.0-test.1)
 
@@ -61,3 +69,5 @@ Matthew Stanley e colaboradores: MegaManZeroRecomp, gbarecomp e recomp-ui, sob P
 Configurações persistentes de vídeo/desempenho no launcher e no botão VÍDEO durante o jogo: overlay FPS/frametime/simulação, posição/toggle, apresentação 30 ou ~60, upscale real até 8×, proporções de tela e nearest/bilinear. Acima de 60 não produz novos frames: 90/120/ilimitado são explicitamente limitados pelo framebuffer do GBA; não aceleram a lógica. Automático usa upscale 1× econômico. Ícone adaptativo novo incluído.
 
 [Relatório técnico, métricas e limitações](validation/enhanced/NATIVE-REPORT.md). Testes SDL reais: `bash tools/test-enhanced-video.sh`. O usuário confirmou introdução no Android com 0.2.0; esta build ainda requer validação do overlay e desempenho no aparelho. Não há declaração de cobertura 100% estática: fallback ARMv4T upstream permanece.
+
+[Instalar Enhanced 0.2.1-test.1 ARM64](https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.1-test.1/MegaManZeroNativeEnhanced-0.2.1-test.1-arm64-v8a.apk) · [Prerelease, checksums e relatórios](https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.1-test.1).

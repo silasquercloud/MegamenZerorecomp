@@ -11,3 +11,13 @@ add_executable(mmz_boot_check "${REPO}/MegaManZeroRecomp/src/main.cpp" "${REPO}/
 set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O1;-g0")
 target_include_directories(mmz_boot_check PRIVATE "${REPO}/MegaManZeroRecomp/src" "${REPO}/gbarecomp/src/runtime" "${REPO}/gbarecomp/src/gba" "${REPO}/gbarecomp/src/debug" "${REPO}/gbarecomp/src/armv4t")
 target_link_libraries(mmz_boot_check PRIVATE "-Wl,--start-group" gbarecomp_runtime gbarecomp_debug gbarecomp_gba gbarecomp_armv4t "-Wl,--end-group")
+
+option(MMZ_VIDEO_TEST "Run the actual recompiled game through the shared Vulkan backend on Linux" OFF)
+if(MMZ_VIDEO_TEST)
+    set(GBARECOMP_ROOT "${REPO}/gbarecomp")
+    set(MMZ_NATIVE_ROOT "${REPO}/android/native")
+    include("${REPO}/android/native/instrument-runtime.cmake")
+    target_sources(mmz_boot_check PRIVATE host-video.cpp "${MMZ_NATIVE_ROOT}/enhanced.cpp" "${MMZ_NATIVE_ROOT}/vulkan/presenter.cpp")
+    target_include_directories(mmz_boot_check PRIVATE "${MMZ_NATIVE_ROOT}" "$ENV{JAVA_HOME}/include" "$ENV{JAVA_HOME}/include/linux" "${REPO}/gbarecomp/platform/android/third_party/SDL/src/video/khronos")
+    target_link_libraries(mmz_boot_check PRIVATE /usr/lib/x86_64-linux-gnu/libvulkan.so.1)
+endif()

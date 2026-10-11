@@ -1,4 +1,6 @@
 #include "mobile_platform.h"
+#include "enhanced.h"
+#include "boot-events.h"
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -23,6 +25,7 @@ static void crash_handler(int sig) {
     raise(sig);
 }
 static int android_game_main(int argc, char** argv) {
+    mmz_reset_session();mmz_boot_reset();
     std::vector<std::string> args(argv, argv + argc);
     gbarecomp::MobileProcessOptions options;
     options.game_config = "variants/megaman_zero/game.toml";
@@ -33,6 +36,7 @@ static int android_game_main(int argc, char** argv) {
         return 1;
     }
     gbarecomp::mobile_prepare_process(args, options);
+    setenv("GBARECOMP_FRAME_PHASE", "frame-phases.csv", 1);
     // mobile_prepare_process's flag belongs to game_launcher_preboot, which
     // this Android entry does not call. runtime parse_cli rejects that flag.
     args.erase(std::remove(args.begin(), args.end(), "--no-launcher"), args.end());
