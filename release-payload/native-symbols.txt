@@ -1,0 +1,24 @@
+  1296: 0000000000348270   148 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_stats
+  1355: 0000000001117060 82288 OBJECT  GLOBAL DEFAULT    16 kBiosDispatchTable
+  5413: 00000000001e6b20     4 OBJECT  GLOBAL DEFAULT    11 kBiosDispatchTableLen
+  6512: 0000000000346dc0    24 FUNC    GLOBAL DEFAULT    14 SDL_main
+  8646: 00000000003481ec   132 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_apply
+ 10500: 00000000001e48f8     4 OBJECT  GLOBAL DEFAULT    11 kDispatchTableLen
+ 11737: 00000000010bf3c0 178608 OBJECT GLOBAL DEFAULT    16 kDispatchTable
+
+/workspace/.mmz-build/libmain-0.2.1.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000346dc0 <SDL_main>:
+  346dc0: aa0103e2     	mov	x2, x1
+  346dc4: 2a0003e1     	mov	w1, w0
+  346dc8: d503201f     	nop
+  346dcc: 10000060     	adr	x0, 0x346dd8 <SDL_main+0x18>
+  346dd0: 52a20003     	mov	w3, #0x10000000         // =268435456
+  346dd4: 1435619b     	b	0x109f440 <_ZN9gbarecomp21mobile_run_with_stackEPFiiPPcEiS1_m@plt>
+  346dd8: d10503ff     	sub	sp, sp, #0x140
+
+Selected real ARM64 call instructions from android_game_main:
+  346e98: 9435617a     	bl	0x109f480 <_ZN9gbarecomp22mobile_prepare_processERNSt6__ndk16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEERKNS_20MobileProcessOptionsE@plt>
+  34727c: 943560a5     	bl	0x109f510 <_Z13mmz_game_mainiPPc@plt>

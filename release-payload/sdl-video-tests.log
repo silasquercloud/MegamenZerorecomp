@@ -1,0 +1,39 @@
+MMZ_VIDEO framebuffer=240x160 upscale_requested=1 target=240x160 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=2 target=480x320 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=3 target=720x480 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=4 target=960x640 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=5 target=1200x800 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=6 target=1440x960 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=7 target=1680x1120 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO framebuffer=240x160 upscale_requested=8 target=1920x1280 filter=nearest output=320x213 SDL_error=none
+MMZ_VIDEO cap_requested=30 effective_max=30.0000 simulation_pacer=unchanged
+MMZ_PERF render_fps=29.66 simulation_fps=59.33 frame_ms=33.71 peak_ms=33.87 cpu_ms_per_present=0.06 render_submit_vsync_ms=0.00
+MMZ_VIDEO cap_requested=60 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_VIDEO cap_requested=90 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_VIDEO cap_requested=120 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_VIDEO cap_requested=-1 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_VIDEO cap_requested=0 effective_max=59.7275 simulation_pacer=unchanged
+MMZ_PERF render_fps=59.23 simulation_fps=59.23 frame_ms=16.88 peak_ms=17.07 cpu_ms_per_present=0.04 render_submit_vsync_ms=0.00
+BENCH host-software scale=1 filter=0 submit_ms=0.660
+BENCH host-software scale=1 filter=1 submit_ms=0.340
+BENCH host-software scale=2 filter=0 submit_ms=1.886
+BENCH host-software scale=2 filter=1 submit_ms=1.144
+BENCH host-software scale=3 filter=0 submit_ms=3.621
+BENCH host-software scale=3 filter=1 submit_ms=2.157
+BENCH host-software scale=4 filter=0 submit_ms=7.456
+BENCH host-software scale=4 filter=1 submit_ms=6.145
+BENCH host-software scale=5 filter=0 submit_ms=11.217
+BENCH host-software scale=5 filter=1 submit_ms=6.076
+BENCH host-software scale=6 filter=0 submit_ms=15.301
+BENCH host-software scale=6 filter=1 submit_ms=8.741
+BENCH host-software scale=7 filter=0 submit_ms=33.800
+BENCH host-software scale=7 filter=1 submit_ms=14.286
+BENCH host-software scale=8 filter=0 submit_ms=30.251
+BENCH host-software scale=8 filter=1 submit_ms=16.407
+PASS cap=30 simulation_ticks=60 actual_present_calls=30 elapsed_s=1.013
+PASS cap=60 simulation_ticks=60 actual_present_calls=60 elapsed_s=1.023
+PASS cap=90 simulation_ticks=60 actual_present_calls=60 elapsed_s=1.012
+PASS cap=120 simulation_ticks=60 actual_present_calls=60 elapsed_s=1.023
+PASS cap=-1 simulation_ticks=60 actual_present_calls=60 elapsed_s=1.014
+PASS cap=0 simulation_ticks=60 actual_present_calls=60 elapsed_s=1.035
+PASS real SDL software renderer: scales 1–8, nearest/bilinear, aspect ratios, presentation caps preserve guest iterations
