@@ -24,6 +24,7 @@ ext.gbaGame = [
 ]
 apply from: new File(engineRoot, 'platform/android/gbarecomp-app.gradle')
 android.sourceSets.main.java.srcDir 'src/main/java'
+android.sourceSets.main.assets.srcDir 'src/main/assets'
 android.sourceSets.main.manifest.srcFile 'src/main/AndroidManifest.xml'
 // Keep test signing in the writable Android user directory in cloud builds.
 android.signingConfigs.debug.storeFile = new File(

@@ -12,3 +12,6 @@ export PATH="${JAVA_HOME:+$JAVA_HOME/bin:}/workspace/.mmz-tools/bin:$ANDROID_HOM
 if [[ -f /etc/ssl/certs/java/cacerts && ${JAVA_TOOL_OPTIONS:-} != *javax.net.ssl.trustStore* ]]; then
     export JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS:-} -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts"
 fi
+# Keep emulator registration/authentication files inside the writable workspace.
+export ANDROID_AVD_HOME="${ANDROID_AVD_HOME:-/workspace/.android/avd}"
+export ANDROID_EMULATOR_HOME="${ANDROID_EMULATOR_HOME:-/workspace/.android}"
