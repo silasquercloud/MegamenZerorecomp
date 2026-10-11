@@ -1,0 +1,23 @@
+plugins { id 'com.android.application' }
+def gameRoot = rootDir.parentFile
+def engineRoot = new File(gameRoot, 'gbarecomp')
+ext.gbaGame = [
+    applicationId: 'com.silasquercloud.megamanzeronative',
+    versionCode: 1, versionName: '0.1.0-dev',
+    title: 'Mega Man Zero Native', romLabel: 'Mega Man Zero (USA), revisão 0',
+    romSha1: ['193b14120119162518a73c70876f0b8bffdbd96e'],
+    romSize: 8388608, romFile: 'megaman_zero_usa.gba', biosRequired: true,
+    orientation: 'landscape', payloadVersion: '1',
+    setupNote: 'Importe sua ROM original e BIOS GBA. Não são distribuídas com o aplicativo.',
+    variant: 'megaman_zero', gameToml: new File(rootDir, 'game_android.toml'),
+    gameRoot: gameRoot, engineRoot: engineRoot,
+    recompUiRoot: new File(gameRoot, 'MegaManZeroRecomp/recomp-ui'),
+    releaseAbis: ['arm64-v8a'], debugAbis: ['arm64-v8a'], nativeJobs: 4,
+]
+apply from: new File(engineRoot, 'platform/android/gbarecomp-app.gradle')
+android.sourceSets.main.java.srcDir 'src/main/java'
+android.sourceSets.main.manifest.srcFile 'src/main/AndroidManifest.xml'
+// Distribution is always ROM/BIOS-free, including release workflow builds.
+if (providers.gradleProperty('privateRom').isPresent() || providers.gradleProperty('privateBios').isPresent()) {
+    throw new GradleException('Este projeto não permite incluir ROM ou BIOS no APK.')
+}

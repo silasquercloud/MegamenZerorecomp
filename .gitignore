@@ -1,2 +1,17 @@
 *.zip
 *.sha256
+android/.gradle/
+android/.cxx/
+android/build/
+android/local.properties
+android/signing.local.properties
+android/generated/
+android/app/build/
+android/app/.cxx/
+roms/
+bios/
+*.gba
+*.sav
+*.jks
+*.keystore
+__pycache__/
