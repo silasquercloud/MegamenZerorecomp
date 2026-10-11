@@ -1,3 +1,5 @@
 Launcher illustration: locally generated adaptation of the visual reference supplied by the project owner for this release. Independent PNG/WebP character/scene layers, original technological panel decoration and local vector icons. No ROM/BIOS data.
 Mega Man, Mega Man Zero and Zero are trademarks/characters of their respective owners (Capcom). This unofficial noncommercial project does not claim ownership or endorsement. Artwork use does not grant rights to the original game or trademarks.
 Logo glyph outlines derive from DejaVu Sans Bold Oblique; see DejaVu-LICENSE.txt.
+
+Enhanced 0.2.1: artwork for the red helmet launcher icon was generated for this project and packaged locally in adaptive and density-specific Android resources. It is unofficial fan artwork; Mega Man / Zero names and character rights remain with Capcom. No official game artwork file, ROM or BIOS is packaged as the icon.
