@@ -1,0 +1,24 @@
+MMZ_VK_SWAPCHAIN 640x480 images=3
+MMZ_VK_READY gpu=llvmpipe (LLVM 19.1.7, 256 bits) images=3 upload_slots=2 present=FIFO extent=640x480
+MMZ_VK_FIRST_PRESENT result=0 framebuffer=240x160 upscale=1
+MMZ_VK_SWAPCHAIN 800x500 images=3
+MMZ_VK_SWAPCHAIN 800x500 images=3
+MMZ_VK_READY gpu=llvmpipe (LLVM 19.1.7, 256 bits) images=3 upload_slots=2 present=FIFO extent=800x500
+MMZ_VK_FIRST_PRESENT result=0 framebuffer=240x160 upscale=1
+VK_BENCH scale=1 filter=0 submitted=12 mean_ms=13.951 wait_ms=0.108 upload_ms=0.051 submit_ms=2.048
+VK_BENCH scale=1 filter=1 submitted=12 mean_ms=6.633 wait_ms=0.092 upload_ms=0.113 submit_ms=2.892
+VK_BENCH scale=2 filter=0 submitted=12 mean_ms=8.937 wait_ms=0.083 upload_ms=0.035 submit_ms=4.321
+VK_BENCH scale=2 filter=1 submitted=12 mean_ms=8.655 wait_ms=0.070 upload_ms=0.079 submit_ms=2.567
+VK_BENCH scale=3 filter=0 submitted=12 mean_ms=7.903 wait_ms=0.208 upload_ms=0.045 submit_ms=2.436
+VK_BENCH scale=3 filter=1 submitted=12 mean_ms=3.495 wait_ms=0.067 upload_ms=0.072 submit_ms=3.053
+VK_BENCH scale=4 filter=0 submitted=12 mean_ms=5.191 wait_ms=0.220 upload_ms=0.043 submit_ms=3.830
+VK_BENCH scale=4 filter=1 submitted=12 mean_ms=5.937 wait_ms=0.128 upload_ms=0.051 submit_ms=3.840
+VK_BENCH scale=5 filter=0 submitted=12 mean_ms=4.914 wait_ms=0.071 upload_ms=0.035 submit_ms=4.841
+VK_BENCH scale=5 filter=1 submitted=12 mean_ms=6.293 wait_ms=0.052 upload_ms=0.036 submit_ms=4.167
+VK_BENCH scale=6 filter=0 submitted=12 mean_ms=6.819 wait_ms=0.159 upload_ms=0.037 submit_ms=9.405
+VK_BENCH scale=6 filter=1 submitted=12 mean_ms=11.915 wait_ms=0.690 upload_ms=0.042 submit_ms=11.508
+VK_BENCH scale=7 filter=0 submitted=12 mean_ms=20.660 wait_ms=0.061 upload_ms=0.045 submit_ms=9.090
+VK_BENCH scale=7 filter=1 submitted=12 mean_ms=40.843 wait_ms=0.120 upload_ms=0.195 submit_ms=9.419
+VK_BENCH scale=8 filter=0 submitted=12 mean_ms=28.686 wait_ms=0.210 upload_ms=0.086 submit_ms=6.909
+VK_BENCH scale=8 filter=1 submitted=12 mean_ms=14.510 wait_ms=0.183 upload_ms=0.389 submit_ms=10.812
+PASS Vulkan instance/device/surface/swapchain, 192 presents, 1–8x filters, resize, teardown/restart

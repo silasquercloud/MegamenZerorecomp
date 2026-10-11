@@ -33,6 +33,7 @@ static int android_game_main(int argc, char** argv) {
         return 1;
     }
     gbarecomp::mobile_prepare_process(args, options);
+    setenv("GBARECOMP_FRAME_PHASE", "frame-phases.csv", 1);
     // mobile_prepare_process's flag belongs to game_launcher_preboot, which
     // this Android entry does not call. runtime parse_cli rejects that flag.
     args.erase(std::remove(args.begin(), args.end(), "--no-launcher"), args.end());

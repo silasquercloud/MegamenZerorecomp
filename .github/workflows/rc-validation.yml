@@ -1,0 +1,50 @@
+name: RC Vulkan and Android native validation
+on:
+  push:
+    branches: [codex/android-arm64]
+    paths: ['android/native/**', 'android/app/src/main/java/**', 'tools/tests/**', '.github/workflows/rc-validation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          submodules: false
+      - name: Pinned SDL headers and Linux software Vulkan
+        run: |
+          git submodule update --init gbarecomp
+          git -C gbarecomp submodule update --init platform/android/third_party/SDL
+          sudo apt-get update -qq
+          sudo apt-get install -y libsdl2-dev libvulkan-dev mesa-vulkan-drivers vulkan-validationlayers xvfb
+      - name: Real Vulkan swapchain, filters, resize and lifecycle
+        env:
+          MMZ_TEST_BUILD: ${{ runner.temp }}/mmz-tests
+          MMZ_VK_VALIDATION: '1'
+          VK_ICD_FILENAMES: /usr/share/vulkan/icd.d/lvp_icd.x86_64.json
+        run: |
+          if [[ ! -f "$VK_ICD_FILENAMES" ]]; then export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/lvp_icd.json; fi
+          xvfb-run -a bash tools/test-vulkan.sh > vulkan-ci.log 2>&1
+          cat vulkan-ci.log
+          if grep -E 'Validation Error|VUID-' vulkan-ci.log; then exit 1; fi
+      - name: Controls and image filter behavior
+        run: |
+          mkdir -p "$RUNNER_TEMP/mmz-java"
+          javac -d "$RUNNER_TEMP/mmz-java" android/app/src/main/java/com/silasquercloud/megamanzeronative/TouchState.java tools/tests/TouchStateTest.java
+          java -cp "$RUNNER_TEMP/mmz-java" TouchStateTest
+          c++ -O2 -Iandroid/native tools/tests/effects-test.cpp -o "$RUNNER_TEMP/effects"
+          "$RUNNER_TEMP/effects"
+      - name: Compile Android ARM64 Vulkan, JNI and metrics source
+        run: |
+          sdkmanager 'ndk;27.1.12297006' >/dev/null
+          compiler="$ANDROID_HOME/ndk/27.1.12297006/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android28-clang++"
+          for source in android/native/vulkan/presenter.cpp android/native/vulkan/android_bridge.cpp android/native/enhanced.cpp; do
+            "$compiler" -std=c++20 -O2 -fPIC -Igbarecomp/platform/android/third_party/SDL/include -c "$source" -o "$RUNNER_TEMP/$(basename "$source").o"
+          done
+          echo 'Android native sources compiled; full APK requires private generated game/BIOS corpus and is built separately.'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rc-vulkan-ci-log
+          path: vulkan-ci.log
