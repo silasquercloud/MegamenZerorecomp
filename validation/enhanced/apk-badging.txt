@@ -1,5 +1,5 @@
 package: name='com.silasquercloud.megamanzeronative' versionCode='3' versionName='0.2.1-test.1' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
-application-label:'Mega Man Zero Native'
+application-label:'Mega Man Zero Native Enhanced'
 application-icon-160:'res/BW.xml'
 application-icon-240:'res/BW.xml'
 application-icon-320:'res/BW.xml'
