@@ -23,6 +23,7 @@ jobs:
         env:
           MMZ_TEST_BUILD: ${{ runner.temp }}/mmz-tests
           MMZ_VK_VALIDATION: '1'
+          LP_NUM_THREADS: '4'
           VK_ICD_FILENAMES: /usr/share/vulkan/icd.d/lvp_icd.x86_64.json
         run: |
           if [[ ! -f "$VK_ICD_FILENAMES" ]]; then export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/lvp_icd.json; fi
@@ -38,7 +39,8 @@ jobs:
           "$RUNNER_TEMP/effects"
       - name: Compile Android ARM64 Vulkan, JNI and metrics source
         run: |
-          sdkmanager 'ndk;27.1.12297006' >/dev/null
+          sdkmanager_path="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          "$sdkmanager_path" 'ndk;27.1.12297006' >/dev/null
           compiler="$ANDROID_HOME/ndk/27.1.12297006/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android28-clang++"
           for source in android/native/vulkan/presenter.cpp android/native/vulkan/android_bridge.cpp android/native/enhanced.cpp; do
             "$compiler" -std=c++20 -O2 -fPIC -Igbarecomp/platform/android/third_party/SDL/include -c "$source" -o "$RUNNER_TEMP/$(basename "$source").o"
