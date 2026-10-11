@@ -1,24 +1,869 @@
-  1296: 0000000000348270   148 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_stats
-  1355: 0000000001117060 82288 OBJECT  GLOBAL DEFAULT    16 kBiosDispatchTable
-  5413: 00000000001e6b20     4 OBJECT  GLOBAL DEFAULT    11 kBiosDispatchTableLen
-  6512: 0000000000346dc0    24 FUNC    GLOBAL DEFAULT    14 SDL_main
-  8646: 00000000003481ec   132 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_apply
- 10500: 00000000001e48f8     4 OBJECT  GLOBAL DEFAULT    11 kDispatchTableLen
- 11737: 00000000010bf3c0 178608 OBJECT GLOBAL DEFAULT    16 kDispatchTable
+    80: 0000000000000000     0 FUNC    GLOBAL DEFAULT   UND vkCreateSwapchainKHR
+   103: 0000000000000000     0 FUNC    GLOBAL DEFAULT   UND vkQueuePresentKHR
+   112: 0000000000000000     0 FUNC    GLOBAL DEFAULT   UND vkCreateAndroidSurfaceKHR
+  2361: 000000000034beac    36 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_effect
+  2536: 00000000010c6120 178608 OBJECT GLOBAL DEFAULT    16 kDispatchTable
+  2652: 0000000000f085d8  1260 FUNC    GLOBAL DEFAULT    14 runtime_dispatch_miss
+  2760: 000000000034e684    16 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_activeBackend
+  5346: 000000000034e528   204 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_surface
+  6288: 0000000000349f20    24 FUNC    GLOBAL DEFAULT    14 SDL_main
+  9942: 000000000034bed0    20 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_TouchOverlay_keys
+  9986: 000000000111dd80 82288 OBJECT  GLOBAL DEFAULT    16 kBiosDispatchTable
+ 10013: 000000000034b460   132 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_apply
+ 10826: 000000000034e5f4   144 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_backend
+ 10946: 00000000001e7118     4 OBJECT  GLOBAL DEFAULT    11 kDispatchTableLen
+ 11027: 00000000001e9220     4 OBJECT  GLOBAL DEFAULT    11 kBiosDispatchTableLen
+ 12843: 000000000034b4e4   352 FUNC    GLOBAL DEFAULT    14 Java_com_silasquercloud_megamanzeronative_VideoSettings_stats
 
-/workspace/.mmz-build/libmain-0.2.1.so:	file format elf64-littleaarch64
+/workspace/.mmz-build/libmain-rc1.so:	file format elf64-littleaarch64
 
 Disassembly of section .text:
 
-0000000000346dc0 <SDL_main>:
-  346dc0: aa0103e2     	mov	x2, x1
-  346dc4: 2a0003e1     	mov	w1, w0
-  346dc8: d503201f     	nop
-  346dcc: 10000060     	adr	x0, 0x346dd8 <SDL_main+0x18>
-  346dd0: 52a20003     	mov	w3, #0x10000000         // =268435456
-  346dd4: 1435619b     	b	0x109f440 <_ZN9gbarecomp21mobile_run_with_stackEPFiiPPcEiS1_m@plt>
-  346dd8: d10503ff     	sub	sp, sp, #0x140
-
-Selected real ARM64 call instructions from android_game_main:
-  346e98: 9435617a     	bl	0x109f480 <_ZN9gbarecomp22mobile_prepare_processERNSt6__ndk16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEERKNS_20MobileProcessOptionsE@plt>
-  34727c: 943560a5     	bl	0x109f510 <_Z13mmz_game_mainiPPc@plt>
+0000000000349f20 <SDL_main>:
+  349f20: aa0103e2     	mov	x2, x1
+  349f24: 2a0003e1     	mov	w1, w0
+  349f28: d503201f     	nop
+  349f2c: 10000060     	adr	x0, 0x349f38 <SDL_main+0x18>
+  349f30: 52a20003     	mov	w3, #0x10000000         // =268435456
+  349f34: 14356f37     	b	0x10a5c10 <_ZN9gbarecomp21mobile_run_with_stackEPFiiPPcEiS1_m@plt>
+  349f38: d10503ff     	sub	sp, sp, #0x140
+  349f3c: a90e7bfd     	stp	x29, x30, [sp, #0xe0]
+  349f40: a90f6ffc     	stp	x28, x27, [sp, #0xf0]
+  349f44: a91067fa     	stp	x26, x25, [sp, #0x100]
+  349f48: a9115ff8     	stp	x24, x23, [sp, #0x110]
+  349f4c: a91257f6     	stp	x22, x21, [sp, #0x120]
+  349f50: a9134ff4     	stp	x20, x19, [sp, #0x130]
+  349f54: 910383fd     	add	x29, sp, #0xe0
+  349f58: d53bd059     	mrs	x25, TPIDR_EL0
+  349f5c: aa0103f3     	mov	x19, x1
+  349f60: 2a0003f4     	mov	w20, w0
+  349f64: f9401728     	ldr	x8, [x25, #0x28]
+  349f68: f81e83a8     	stur	x8, [x29, #-0x18]
+  349f6c: 94356f2d     	bl	0x10a5c20 <_Z17mmz_reset_sessionv@plt>
+  349f70: b0006f48     	adrp	x8, 0x1132000 <kBiosDispatchTable+0x14280>
+  349f74: 9100e3f6     	add	x22, sp, #0x38
+  349f78: f945e108     	ldr	x8, [x8, #0xbc0]
+  349f7c: 089ffd1f     	stlrb	wzr, [x8]
+  349f80: a903ffff     	stp	xzr, xzr, [sp, #0x38]
+  349f84: a904dbff     	stp	xzr, x22, [sp, #0x48]
+  349f88: 390163ff     	strb	wzr, [sp, #0x58]
+  349f8c: 34000254     	cbz	w20, 0x349fd4 <SDL_main+0xb4>
+  349f90: 37f829f4     	tbnz	w20, #0x1f, 0x34a4cc <SDL_main+0x5ac>
+  349f94: 93407e97     	sxtw	x23, w20
+  349f98: 8b1706e8     	add	x8, x23, x23, lsl #1
+  349f9c: d37df100     	lsl	x0, x8, #3
+  349fa0: 94356f24     	bl	0x10a5c30 <_Znwm@plt>
+  349fa4: 52800308     	mov	w8, #0x18               // =24
+  349fa8: aa0003f5     	mov	x21, x0
+  349fac: a90383e0     	stp	x0, x0, [sp, #0x38]
+  349fb0: d503201f     	nop
+  349fb4: 9b2802e8     	smaddl	x8, w23, w8, x0
+  349fb8: 8b34ce62     	add	x2, x19, w20, sxtw #3
+  349fbc: f90027e8     	str	x8, [sp, #0x48]
+  349fc0: 910042c0     	add	x0, x22, #0x10
+  349fc4: aa1303e1     	mov	x1, x19
+  349fc8: aa1503e3     	mov	x3, x21
+  349fcc: 940002ad     	bl	0x34aa80 <SDL_main+0xb60>
+  349fd0: f90023e0     	str	x0, [sp, #0x40]
+  349fd4: 90fff328     	adrp	x8, 0x1ad000
+  349fd8: 9126c90a     	add	x10, x8, #0x9b2
+  349fdc: f0fff389     	adrp	x9, 0x1bc000
+  349fe0: 913df529     	add	x9, x9, #0xf7d
+  349fe4: 90fff2a8     	adrp	x8, 0x19d000
+  349fe8: 91238108     	add	x8, x8, #0x8e0
+  349fec: f90013e8     	str	x8, [sp, #0x20]
+  349ff0: a902abe9     	stp	x9, x10, [sp, #0x28]
+  349ff4: 94356f13     	bl	0x10a5c40 <SDL_AndroidGetInternalStoragePath@plt>
+  349ff8: b40004c0     	cbz	x0, 0x34a090 <SDL_main+0x170>
+  349ffc: 94356f15     	bl	0x10a5c50 <chdir@plt>
+  34a000: 35000480     	cbnz	w0, 0x34a090 <SDL_main+0x170>
+  34a004: 9100e3e0     	add	x0, sp, #0x38
+  34a008: 910083e1     	add	x1, sp, #0x20
+  34a00c: 94356f15     	bl	0x10a5c60 <_ZN9gbarecomp22mobile_prepare_processERNSt6__ndk16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEERKNS_20MobileProcessOptionsE@plt>
+  34a010: b0fff300     	adrp	x0, 0x1ab000
+  34a014: 91162800     	add	x0, x0, #0x58a
+  34a018: d0fff381     	adrp	x1, 0x1bc000
+  34a01c: 913e4421     	add	x1, x1, #0xf91
+  34a020: 52800022     	mov	w2, #0x1                // =1
+  34a024: 94356f13     	bl	0x10a5c70 <setenv@plt>
+  34a028: a94387e0     	ldp	x0, x1, [sp, #0x38]
+  34a02c: 90fff382     	adrp	x2, 0x1ba000
+  34a030: 9135e842     	add	x2, x2, #0xd7a
+  34a034: 9400016d     	bl	0x34a5e8 <SDL_main+0x6c8>
+  34a038: f94023f4     	ldr	x20, [sp, #0x40]
+  34a03c: aa0003f3     	mov	x19, x0
+  34a040: eb000288     	subs	x8, x20, x0
+  34a044: 54000820     	b.eq	0x34a148 <SDL_main+0x228>
+  34a048: 8b080275     	add	x21, x19, x8
+  34a04c: eb1402bf     	cmp	x21, x20
+  34a050: 54000161     	b.ne	0x34a07c <SDL_main+0x15c>
+  34a054: eb13029f     	cmp	x20, x19
+  34a058: 54000760     	b.eq	0x34a144 <SDL_main+0x224>
+  34a05c: 14000105     	b	0x34a470 <SDL_main+0x550>
+  34a060: f9400aa8     	ldr	x8, [x21, #0x10]
+  34a064: 3dc002a0     	ldr	q0, [x21]
+  34a068: f9000a68     	str	x8, [x19, #0x10]
+  34a06c: 3c818660     	str	q0, [x19], #0x18
+  34a070: 780186bf     	strh	wzr, [x21], #0x18
+  34a074: eb1402bf     	cmp	x21, x20
+  34a078: 54000600     	b.eq	0x34a138 <SDL_main+0x218>
+  34a07c: 39400268     	ldrb	w8, [x19]
+  34a080: 3607ff08     	tbz	w8, #0x0, 0x34a060 <SDL_main+0x140>
+  34a084: f9400a60     	ldr	x0, [x19, #0x10]
+  34a088: 94356efe     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a08c: 17fffff5     	b	0x34a060 <SDL_main+0x140>
+  34a090: 90006f48     	adrp	x8, 0x1132000 <kBiosDispatchTable+0x14280>
+  34a094: f945e508     	ldr	x8, [x8, #0xbc8]
+  34a098: f9400113     	ldr	x19, [x8]
+  34a09c: 94356efd     	bl	0x10a5c90 <SDL_GetError@plt>
+  34a0a0: aa0003e2     	mov	x2, x0
+  34a0a4: b0fff3c1     	adrp	x1, 0x1c3000
+  34a0a8: 911aa821     	add	x1, x1, #0x6aa
+  34a0ac: aa1303e0     	mov	x0, x19
+  34a0b0: 94356efc     	bl	0x10a5ca0 <fprintf@plt>
+  34a0b4: 52800033     	mov	w19, #0x1               // =1
+  34a0b8: f9401ff4     	ldr	x20, [sp, #0x38]
+  34a0bc: b4000254     	cbz	x20, 0x34a104 <SDL_main+0x1e4>
+  34a0c0: f94023e8     	ldr	x8, [sp, #0x40]
+  34a0c4: aa1403e0     	mov	x0, x20
+  34a0c8: eb14011f     	cmp	x8, x20
+  34a0cc: 54000180     	b.eq	0x34a0fc <SDL_main+0x1dc>
+  34a0d0: aa0803f5     	mov	x21, x8
+  34a0d4: 14000004     	b	0x34a0e4 <SDL_main+0x1c4>
+  34a0d8: eb1402bf     	cmp	x21, x20
+  34a0dc: aa1503e8     	mov	x8, x21
+  34a0e0: 540000c0     	b.eq	0x34a0f8 <SDL_main+0x1d8>
+  34a0e4: 385e8ea9     	ldrb	w9, [x21, #-0x18]!
+  34a0e8: 3607ff89     	tbz	w9, #0x0, 0x34a0d8 <SDL_main+0x1b8>
+  34a0ec: f85f8100     	ldur	x0, [x8, #-0x8]
+  34a0f0: 94356ee4     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a0f4: 17fffff9     	b	0x34a0d8 <SDL_main+0x1b8>
+  34a0f8: f9401fe0     	ldr	x0, [sp, #0x38]
+  34a0fc: f90023f4     	str	x20, [sp, #0x40]
+  34a100: 94356ee0     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a104: f9401728     	ldr	x8, [x25, #0x28]
+  34a108: f85e83a9     	ldur	x9, [x29, #-0x18]
+  34a10c: eb09011f     	cmp	x8, x9
+  34a110: 540026a1     	b.ne	0x34a5e4 <SDL_main+0x6c4>
+  34a114: 2a1303e0     	mov	w0, w19
+  34a118: a9534ff4     	ldp	x20, x19, [sp, #0x130]
+  34a11c: a95257f6     	ldp	x22, x21, [sp, #0x120]
+  34a120: a9515ff8     	ldp	x24, x23, [sp, #0x110]
+  34a124: a95067fa     	ldp	x26, x25, [sp, #0x100]
+  34a128: a94f6ffc     	ldp	x28, x27, [sp, #0xf0]
+  34a12c: a94e7bfd     	ldp	x29, x30, [sp, #0xe0]
+  34a130: 910503ff     	add	sp, sp, #0x140
+  34a134: d65f03c0     	ret
+  34a138: f94023f4     	ldr	x20, [sp, #0x40]
+  34a13c: eb13029f     	cmp	x20, x19
+  34a140: 54001981     	b.ne	0x34a470 <SDL_main+0x550>
+  34a144: f90023f3     	str	x19, [sp, #0x40]
+  34a148: f0fff480     	adrp	x0, 0x1dd000
+  34a14c: 9125e800     	add	x0, x0, #0x97a
+  34a150: 52804821     	mov	w1, #0x241              // =577
+  34a154: 52803002     	mov	w2, #0x180              // =384
+  34a158: 94356ed6     	bl	0x10a5cb0 <open@plt>
+  34a15c: f0006fd4     	adrp	x20, 0x1145000
+  34a160: b902f280     	str	w0, [x20, #0x2f0]
+  34a164: 37f800a0     	tbnz	w0, #0x1f, 0x34a178 <SDL_main+0x258>
+  34a168: f0fff481     	adrp	x1, 0x1dd000
+  34a16c: 91262421     	add	x1, x1, #0x989
+  34a170: 528004c2     	mov	w2, #0x26               // =38
+  34a174: 94356ed3     	bl	0x10a5cc0 <write@plt>
+  34a178: 6f00e400     	movi	v0.2d, #0000000000000000
+  34a17c: d10103a8     	sub	x8, x29, #0x40
+  34a180: d10103a9     	sub	x9, x29, #0x40
+  34a184: ad000100     	stp	q0, q0, [x8]
+  34a188: d503201f     	nop
+  34a18c: 10002ce8     	adr	x8, 0x34a728 <SDL_main+0x808>
+  34a190: f81c83a8     	stur	x8, [x29, #-0x38]
+  34a194: 91004120     	add	x0, x9, #0x10
+  34a198: 94356ece     	bl	0x10a5cd0 <sigemptyset@plt>
+  34a19c: 90006fe2     	adrp	x2, 0x1146000
+  34a1a0: 91044042     	add	x2, x2, #0x110
+  34a1a4: d10103a1     	sub	x1, x29, #0x40
+  34a1a8: 52800160     	mov	w0, #0xb                // =11
+  34a1ac: 94356ecd     	bl	0x10a5ce0 <sigaction@plt>
+  34a1b0: 90006fe2     	adrp	x2, 0x1146000
+  34a1b4: 9101c042     	add	x2, x2, #0x70
+  34a1b8: d10103a1     	sub	x1, x29, #0x40
+  34a1bc: 528000c0     	mov	w0, #0x6                // =6
+  34a1c0: 94356ec8     	bl	0x10a5ce0 <sigaction@plt>
+  34a1c4: 90006fe2     	adrp	x2, 0x1146000
+  34a1c8: 91024042     	add	x2, x2, #0x90
+  34a1cc: d10103a1     	sub	x1, x29, #0x40
+  34a1d0: 528000e0     	mov	w0, #0x7                // =7
+  34a1d4: 94356ec3     	bl	0x10a5ce0 <sigaction@plt>
+  34a1d8: 90006fe2     	adrp	x2, 0x1146000
+  34a1dc: 9100c042     	add	x2, x2, #0x30
+  34a1e0: d10103a1     	sub	x1, x29, #0x40
+  34a1e4: 52800080     	mov	w0, #0x4                // =4
+  34a1e8: 94356ebe     	bl	0x10a5ce0 <sigaction@plt>
+  34a1ec: 90006fe2     	adrp	x2, 0x1146000
+  34a1f0: 9102c042     	add	x2, x2, #0xb0
+  34a1f4: d10103a1     	sub	x1, x29, #0x40
+  34a1f8: 52800100     	mov	w0, #0x8                // =8
+  34a1fc: 94356eb9     	bl	0x10a5ce0 <sigaction@plt>
+  34a200: 90006f55     	adrp	x21, 0x1132000 <kBiosDispatchTable+0x14280>
+  34a204: f945e6b5     	ldr	x21, [x21, #0xbc8]
+  34a208: f94002b3     	ldr	x19, [x21]
+  34a20c: 94356eb9     	bl	0x10a5cf0 <gettid@plt>
+  34a210: 93407c02     	sxtw	x2, w0
+  34a214: f94013e3     	ldr	x3, [sp, #0x20]
+  34a218: f0fff2a1     	adrp	x1, 0x1a1000
+  34a21c: 91359821     	add	x1, x1, #0xd66
+  34a220: aa1303e0     	mov	x0, x19
+  34a224: 94356e9f     	bl	0x10a5ca0 <fprintf@plt>
+  34a228: a943e3f7     	ldp	x23, x24, [sp, #0x38]
+  34a22c: a900ffff     	stp	xzr, xzr, [sp, #0x8]
+  34a230: f9000fff     	str	xzr, [sp, #0x18]
+  34a234: eb1802ff     	cmp	x23, x24
+  34a238: 54000081     	b.ne	0x34a248 <SDL_main+0x328>
+  34a23c: aa1f03e1     	mov	x1, xzr
+  34a240: aa1f03f3     	mov	x19, xzr
+  34a244: 1400006f     	b	0x34a400 <SDL_main+0x4e0>
+  34a248: f90003f9     	str	x25, [sp]
+  34a24c: aa1f03f3     	mov	x19, xzr
+  34a250: b27deff9     	mov	x25, #0x7ffffffffffffff8 // =9223372036854775800
+  34a254: 92fc001a     	mov	x26, #0x1fffffffffffffff // =2305843009213693951
+  34a258: 14000006     	b	0x34a270 <SDL_main+0x350>
+  34a25c: f8008676     	str	x22, [x19], #0x8
+  34a260: 910062f7     	add	x23, x23, #0x18
+  34a264: f9000bf3     	str	x19, [sp, #0x10]
+  34a268: eb1802ff     	cmp	x23, x24
+  34a26c: 54000c20     	b.eq	0x34a3f0 <SDL_main+0x4d0>
+  34a270: 394002e9     	ldrb	w9, [x23]
+  34a274: f9400aea     	ldr	x10, [x23, #0x10]
+  34a278: f9400fe8     	ldr	x8, [sp, #0x18]
+  34a27c: 7200013f     	tst	w9, #0x1
+  34a280: 9a971556     	csinc	x22, x10, x23, ne
+  34a284: eb08027f     	cmp	x19, x8
+  34a288: 54fffea3     	b.lo	0x34a25c <SDL_main+0x33c>
+  34a28c: f94007fc     	ldr	x28, [sp, #0x8]
+  34a290: cb1c0274     	sub	x20, x19, x28
+  34a294: 9343fe95     	asr	x21, x20, #3
+  34a298: 910006a9     	add	x9, x21, #0x1
+  34a29c: d37dfd2a     	lsr	x10, x9, #61
+  34a2a0: b5000fca     	cbnz	x10, 0x34a498 <SDL_main+0x578>
+  34a2a4: cb1c0108     	sub	x8, x8, x28
+  34a2a8: 9342fd0a     	asr	x10, x8, #2
+  34a2ac: eb09015f     	cmp	x10, x9
+  34a2b0: 9a898149     	csel	x9, x10, x9, hi
+  34a2b4: eb19011f     	cmp	x8, x25
+  34a2b8: 9a9a313b     	csel	x27, x9, x26, lo
+  34a2bc: b40002db     	cbz	x27, 0x34a314 <SDL_main+0x3f4>
+  34a2c0: d37dff68     	lsr	x8, x27, #61
+  34a2c4: b5000f88     	cbnz	x8, 0x34a4b4 <SDL_main+0x594>
+  34a2c8: d37df360     	lsl	x0, x27, #3
+  34a2cc: 94356e59     	bl	0x10a5c30 <_Znwm@plt>
+  34a2d0: 8b150c0a     	add	x10, x0, x21, lsl #3
+  34a2d4: eb1c0268     	subs	x8, x19, x28
+  34a2d8: aa0a03f5     	mov	x21, x10
+  34a2dc: f80086b6     	str	x22, [x21], #0x8
+  34a2e0: 54000261     	b.ne	0x34a32c <SDL_main+0x40c>
+  34a2e4: 8b1b0c08     	add	x8, x0, x27, lsl #3
+  34a2e8: a900d7ea     	stp	x10, x21, [sp, #0x8]
+  34a2ec: f9000fe8     	str	x8, [sp, #0x18]
+  34a2f0: b4000073     	cbz	x19, 0x34a2fc <SDL_main+0x3dc>
+  34a2f4: aa1303e0     	mov	x0, x19
+  34a2f8: 94356e62     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a2fc: aa1503f3     	mov	x19, x21
+  34a300: 910062f7     	add	x23, x23, #0x18
+  34a304: f9000bf5     	str	x21, [sp, #0x10]
+  34a308: eb1802ff     	cmp	x23, x24
+  34a30c: 54fffb21     	b.ne	0x34a270 <SDL_main+0x350>
+  34a310: 14000038     	b	0x34a3f0 <SDL_main+0x4d0>
+  34a314: aa1f03e0     	mov	x0, xzr
+  34a318: 8b150fea     	add	x10, xzr, x21, lsl #3
+  34a31c: eb1c0268     	subs	x8, x19, x28
+  34a320: aa0a03f5     	mov	x21, x10
+  34a324: f80086b6     	str	x22, [x21], #0x8
+  34a328: 54fffde0     	b.eq	0x34a2e4 <SDL_main+0x3c4>
+  34a32c: d1002108     	sub	x8, x8, #0x8
+  34a330: f105211f     	cmp	x8, #0x148
+  34a334: 540001c2     	b.hs	0x34a36c <SDL_main+0x44c>
+  34a338: aa1303e8     	mov	x8, x19
+  34a33c: aa0a03e9     	mov	x9, x10
+  34a340: f85f8d0a     	ldr	x10, [x8, #-0x8]!
+  34a344: eb1c011f     	cmp	x8, x28
+  34a348: f81f8d2a     	str	x10, [x9, #-0x8]!
+  34a34c: 54ffffa1     	b.ne	0x34a340 <SDL_main+0x420>
+  34a350: f94007f3     	ldr	x19, [sp, #0x8]
+  34a354: aa0903ea     	mov	x10, x9
+  34a358: 8b1b0c08     	add	x8, x0, x27, lsl #3
+  34a35c: a900d7e9     	stp	x9, x21, [sp, #0x8]
+  34a360: f9000fe8     	str	x8, [sp, #0x18]
+  34a364: b5fffc93     	cbnz	x19, 0x34a2f4 <SDL_main+0x3d4>
+  34a368: 17ffffe5     	b	0x34a2fc <SDL_main+0x3dc>
+  34a36c: d1002269     	sub	x9, x19, #0x8
+  34a370: 8b14000c     	add	x12, x0, x20
+  34a374: cb1c012b     	sub	x11, x9, x28
+  34a378: d100218c     	sub	x12, x12, #0x8
+  34a37c: 927df16b     	and	x11, x11, #0xfffffffffffffff8
+  34a380: cb0b018d     	sub	x13, x12, x11
+  34a384: eb0c01bf     	cmp	x13, x12
+  34a388: 54fffd88     	b.hi	0x34a338 <SDL_main+0x418>
+  34a38c: cb0b012b     	sub	x11, x9, x11
+  34a390: eb09017f     	cmp	x11, x9
+  34a394: 54fffd28     	b.hi	0x34a338 <SDL_main+0x418>
+  34a398: cb000269     	sub	x9, x19, x0
+  34a39c: cb140129     	sub	x9, x9, x20
+  34a3a0: f100813f     	cmp	x9, #0x20
+  34a3a4: 54fffca3     	b.lo	0x34a338 <SDL_main+0x418>
+  34a3a8: d343fd08     	lsr	x8, x8, #3
+  34a3ac: d100426d     	sub	x13, x19, #0x10
+  34a3b0: 9100050b     	add	x11, x8, #0x1
+  34a3b4: 927eed6c     	and	x12, x11, #0x3ffffffffffffffc
+  34a3b8: d37df189     	lsl	x9, x12, #3
+  34a3bc: aa0c03ee     	mov	x14, x12
+  34a3c0: cb090268     	sub	x8, x19, x9
+  34a3c4: cb090149     	sub	x9, x10, x9
+  34a3c8: d100414a     	sub	x10, x10, #0x10
+  34a3cc: ad7f81a1     	ldp	q1, q0, [x13, #-0x10]
+  34a3d0: f10011ce     	subs	x14, x14, #0x4
+  34a3d4: d10081ad     	sub	x13, x13, #0x20
+  34a3d8: ad3f8141     	stp	q1, q0, [x10, #-0x10]
+  34a3dc: d100814a     	sub	x10, x10, #0x20
+  34a3e0: 54ffff61     	b.ne	0x34a3cc <SDL_main+0x4ac>
+  34a3e4: eb0c017f     	cmp	x11, x12
+  34a3e8: 54fffac1     	b.ne	0x34a340 <SDL_main+0x420>
+  34a3ec: 17ffffd9     	b	0x34a350 <SDL_main+0x430>
+  34a3f0: a94007f9     	ldp	x25, x1, [sp]
+  34a3f4: 90006f55     	adrp	x21, 0x1132000 <kBiosDispatchTable+0x14280>
+  34a3f8: f945e6b5     	ldr	x21, [x21, #0xbc8]
+  34a3fc: f0006fd4     	adrp	x20, 0x1145000
+  34a400: cb010268     	sub	x8, x19, x1
+  34a404: d343fd00     	lsr	x0, x8, #3
+  34a408: 94356e3e     	bl	0x10a5d00 <_Z13mmz_game_mainiPPc@plt>
+  34a40c: 2a0003f3     	mov	w19, w0
+  34a410: f94002a0     	ldr	x0, [x21]
+  34a414: b0fff3c1     	adrp	x1, 0x1c3000
+  34a418: 911b6c21     	add	x1, x1, #0x6db
+  34a41c: 2a1303e2     	mov	w2, w19
+  34a420: 94356e20     	bl	0x10a5ca0 <fprintf@plt>
+  34a424: b942f288     	ldr	w8, [x20, #0x2f0]
+  34a428: 37f801c8     	tbnz	w8, #0x1f, 0x34a460 <SDL_main+0x540>
+  34a42c: 910143e0     	add	x0, sp, #0x50
+  34a430: 2a1303e4     	mov	w4, w19
+  34a434: 940000f8     	bl	0x34a814 <SDL_main+0x8f4>
+  34a438: b942f288     	ldr	w8, [x20, #0x2f0]
+  34a43c: 93407c02     	sxtw	x2, w0
+  34a440: 910143e1     	add	x1, sp, #0x50
+  34a444: 2a0803e0     	mov	w0, w8
+  34a448: 52800a03     	mov	w3, #0x50               // =80
+  34a44c: 94356e31     	bl	0x10a5d10 <__write_chk@plt>
+  34a450: b942f280     	ldr	w0, [x20, #0x2f0]
+  34a454: 94356e33     	bl	0x10a5d20 <close@plt>
+  34a458: 12800008     	mov	w8, #-0x1               // =-1
+  34a45c: b902f288     	str	w8, [x20, #0x2f0]
+  34a460: f94007e0     	ldr	x0, [sp, #0x8]
+  34a464: b4ffe2a0     	cbz	x0, 0x34a0b8 <SDL_main+0x198>
+  34a468: 94356e06     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a46c: 17ffff13     	b	0x34a0b8 <SDL_main+0x198>
+  34a470: aa1403f5     	mov	x21, x20
+  34a474: 14000004     	b	0x34a484 <SDL_main+0x564>
+  34a478: eb1302bf     	cmp	x21, x19
+  34a47c: aa1503f4     	mov	x20, x21
+  34a480: 54ffe620     	b.eq	0x34a144 <SDL_main+0x224>
+  34a484: 385e8ea8     	ldrb	w8, [x21, #-0x18]!
+  34a488: 3607ff88     	tbz	w8, #0x0, 0x34a478 <SDL_main+0x558>
+  34a48c: f85f8280     	ldur	x0, [x20, #-0x8]
+  34a490: 94356dfc     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a494: 17fffff9     	b	0x34a478 <SDL_main+0x558>
+  34a498: f94003e8     	ldr	x8, [sp]
+  34a49c: f9401508     	ldr	x8, [x8, #0x28]
+  34a4a0: f85e83a9     	ldur	x9, [x29, #-0x18]
+  34a4a4: eb09011f     	cmp	x8, x9
+  34a4a8: 540009e1     	b.ne	0x34a5e4 <SDL_main+0x6c4>
+  34a4ac: 910023e0     	add	x0, sp, #0x8
+  34a4b0: 940001e3     	bl	0x34ac3c <SDL_main+0xd1c>
+  34a4b4: f94003e8     	ldr	x8, [sp]
+  34a4b8: f9401508     	ldr	x8, [x8, #0x28]
+  34a4bc: f85e83a9     	ldur	x9, [x29, #-0x18]
+  34a4c0: eb09011f     	cmp	x8, x9
+  34a4c4: 54000901     	b.ne	0x34a5e4 <SDL_main+0x6c4>
+  34a4c8: 94000161     	bl	0x34aa4c <SDL_main+0xb2c>
+  34a4cc: f9401728     	ldr	x8, [x25, #0x28]
+  34a4d0: f85e83a9     	ldur	x9, [x29, #-0x18]
+  34a4d4: eb09011f     	cmp	x8, x9
+  34a4d8: 54000861     	b.ne	0x34a5e4 <SDL_main+0x6c4>
+  34a4dc: 9100e3e0     	add	x0, sp, #0x38
+  34a4e0: 94000136     	bl	0x34a9b8 <SDL_main+0xa98>
+  34a4e4: f90003f9     	str	x25, [sp]
+  34a4e8: 14000031     	b	0x34a5ac <SDL_main+0x68c>
+  34a4ec: 1400002e     	b	0x34a5a4 <SDL_main+0x684>
+  34a4f0: aa1403f6     	mov	x22, x20
+  34a4f4: f90003f9     	str	x25, [sp]
+  34a4f8: aa1503f3     	mov	x19, x21
+  34a4fc: aa0103f4     	mov	x20, x1
+  34a500: 94356e0c     	bl	0x10a5d30 <__cxa_begin_catch@plt>
+  34a504: f94002b3     	ldr	x19, [x21]
+  34a508: 71000a9f     	cmp	w20, #0x2
+  34a50c: 540001c1     	b.ne	0x34a544 <SDL_main+0x624>
+  34a510: f9400008     	ldr	x8, [x0]
+  34a514: f9400908     	ldr	x8, [x8, #0x10]
+  34a518: d63f0100     	blr	x8
+  34a51c: aa0003e2     	mov	x2, x0
+  34a520: 90fff4c1     	adrp	x1, 0x1e2000
+  34a524: 9106ec21     	add	x1, x1, #0x1bb
+  34a528: aa1303e0     	mov	x0, x19
+  34a52c: 94356ddd     	bl	0x10a5ca0 <fprintf@plt>
+  34a530: 94356e04     	bl	0x10a5d40 <__cxa_end_catch@plt>
+  34a534: f94003f9     	ldr	x25, [sp]
+  34a538: 52800033     	mov	w19, #0x1               // =1
+  34a53c: aa1603f4     	mov	x20, x22
+  34a540: 17ffffb4     	b	0x34a410 <SDL_main+0x4f0>
+  34a544: b0fff3a0     	adrp	x0, 0x1bf000
+  34a548: 91081c00     	add	x0, x0, #0x207
+  34a54c: 52800481     	mov	w1, #0x24               // =36
+  34a550: 52800022     	mov	w2, #0x1                // =1
+  34a554: aa1303e3     	mov	x3, x19
+  34a558: 52800033     	mov	w19, #0x1               // =1
+  34a55c: 94356dfd     	bl	0x10a5d50 <fwrite@plt>
+  34a560: f94003f9     	ldr	x25, [sp]
+  34a564: 94356df7     	bl	0x10a5d40 <__cxa_end_catch@plt>
+  34a568: aa1603f4     	mov	x20, x22
+  34a56c: 17ffffa9     	b	0x34a410 <SDL_main+0x4f0>
+  34a570: 1400000f     	b	0x34a5ac <SDL_main+0x68c>
+  34a574: 1400000e     	b	0x34a5ac <SDL_main+0x68c>
+  34a578: 1400000b     	b	0x34a5a4 <SDL_main+0x684>
+  34a57c: 1400000a     	b	0x34a5a4 <SDL_main+0x684>
+  34a580: aa0003f3     	mov	x19, x0
+  34a584: f90023f5     	str	x21, [sp, #0x40]
+  34a588: 14000002     	b	0x34a590 <SDL_main+0x670>
+  34a58c: aa0003f3     	mov	x19, x0
+  34a590: 910143e0     	add	x0, sp, #0x50
+  34a594: 940000e6     	bl	0x34a92c <SDL_main+0xa0c>
+  34a598: 1400000d     	b	0x34a5cc <SDL_main+0x6ac>
+  34a59c: 14000004     	b	0x34a5ac <SDL_main+0x68c>
+  34a5a0: 14000001     	b	0x34a5a4 <SDL_main+0x684>
+  34a5a4: aa0003f3     	mov	x19, x0
+  34a5a8: 14000007     	b	0x34a5c4 <SDL_main+0x6a4>
+  34a5ac: aa0003f3     	mov	x19, x0
+  34a5b0: f94007e0     	ldr	x0, [sp, #0x8]
+  34a5b4: b4000060     	cbz	x0, 0x34a5c0 <SDL_main+0x6a0>
+  34a5b8: f9000be0     	str	x0, [sp, #0x10]
+  34a5bc: 94356db1     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a5c0: f94003f9     	ldr	x25, [sp]
+  34a5c4: 9100e3e0     	add	x0, sp, #0x38
+  34a5c8: 940000ba     	bl	0x34a8b0 <SDL_main+0x990>
+  34a5cc: f9401728     	ldr	x8, [x25, #0x28]
+  34a5d0: f85e83a9     	ldur	x9, [x29, #-0x18]
+  34a5d4: eb09011f     	cmp	x8, x9
+  34a5d8: 54000061     	b.ne	0x34a5e4 <SDL_main+0x6c4>
+  34a5dc: aa1303e0     	mov	x0, x19
+  34a5e0: 94355e3d     	bl	0x10a1ed4 <_ZN6armv4t10ArmCodegen10emit_blockERKNSt6__ndk16vectorINS_5InstrENS1_9allocatorIS3_EEEERKNS_10CodegenCtxE+0x71f4>
+  34a5e4: 94356ddf     	bl	0x10a5d60 <__stack_chk_fail@plt>
+  34a5e8: a9bb7bfd     	stp	x29, x30, [sp, #-0x50]!
+  34a5ec: f9000bf9     	str	x25, [sp, #0x10]
+  34a5f0: a9025ff8     	stp	x24, x23, [sp, #0x20]
+  34a5f4: a90357f6     	stp	x22, x21, [sp, #0x30]
+  34a5f8: a9044ff4     	stp	x20, x19, [sp, #0x40]
+  34a5fc: 910003fd     	mov	x29, sp
+  34a600: aa0103f4     	mov	x20, x1
+  34a604: aa0003f3     	mov	x19, x0
+  34a608: eb01001f     	cmp	x0, x1
+  34a60c: aa0203f5     	mov	x21, x2
+  34a610: 54000300     	b.eq	0x34a670 <SDL_main+0x750>
+  34a614: aa1503e0     	mov	x0, x21
+  34a618: 94356dd6     	bl	0x10a5d70 <strlen@plt>
+  34a61c: aa0003f6     	mov	x22, x0
+  34a620: 14000004     	b	0x34a630 <SDL_main+0x710>
+  34a624: 91006273     	add	x19, x19, #0x18
+  34a628: eb14027f     	cmp	x19, x20
+  34a62c: 54000200     	b.eq	0x34a66c <SDL_main+0x74c>
+  34a630: 39400268     	ldrb	w8, [x19]
+  34a634: f9400669     	ldr	x9, [x19, #0x8]
+  34a638: d341fd0a     	lsr	x10, x8, #1
+  34a63c: 7200011f     	tst	w8, #0x1
+  34a640: 9a890149     	csel	x9, x10, x9, eq
+  34a644: eb16013f     	cmp	x9, x22
+  34a648: 54fffee1     	b.ne	0x34a624 <SDL_main+0x704>
+  34a64c: f9400a69     	ldr	x9, [x19, #0x10]
+  34a650: 7200011f     	tst	w8, #0x1
+  34a654: aa1503e1     	mov	x1, x21
+  34a658: aa1603e2     	mov	x2, x22
+  34a65c: 9a931520     	csinc	x0, x9, x19, ne
+  34a660: 94356dc8     	bl	0x10a5d80 <memcmp@plt>
+  34a664: 35fffe00     	cbnz	w0, 0x34a624 <SDL_main+0x704>
+  34a668: 14000002     	b	0x34a670 <SDL_main+0x750>
+  34a66c: aa1403f3     	mov	x19, x20
+  34a670: eb14027f     	cmp	x19, x20
+  34a674: 540004c0     	b.eq	0x34a70c <SDL_main+0x7ec>
+  34a678: 91006268     	add	x8, x19, #0x18
+  34a67c: eb14011f     	cmp	x8, x20
+  34a680: 54000460     	b.eq	0x34a70c <SDL_main+0x7ec>
+  34a684: 9100a277     	add	x23, x19, #0x28
+  34a688: 1400000a     	b	0x34a6b0 <SDL_main+0x790>
+  34a68c: f9400b08     	ldr	x8, [x24, #0x10]
+  34a690: 3dc00300     	ldr	q0, [x24]
+  34a694: f9000a68     	str	x8, [x19, #0x10]
+  34a698: 3c818660     	str	q0, [x19], #0x18
+  34a69c: 781f02ff     	sturh	wzr, [x23, #-0x10]
+  34a6a0: 9100a317     	add	x23, x24, #0x28
+  34a6a4: d10042e8     	sub	x8, x23, #0x10
+  34a6a8: eb14011f     	cmp	x8, x20
+  34a6ac: 54000300     	b.eq	0x34a70c <SDL_main+0x7ec>
+  34a6b0: aa1703f8     	mov	x24, x23
+  34a6b4: aa1503e0     	mov	x0, x21
+  34a6b8: 385f0f19     	ldrb	w25, [x24, #-0x10]!
+  34a6bc: f9400708     	ldr	x8, [x24, #0x8]
+  34a6c0: d341ff29     	lsr	x9, x25, #1
+  34a6c4: 7200033f     	tst	w25, #0x1
+  34a6c8: 9a880136     	csel	x22, x9, x8, eq
+  34a6cc: 94356da9     	bl	0x10a5d70 <strlen@plt>
+  34a6d0: eb0002df     	cmp	x22, x0
+  34a6d4: 54000121     	b.ne	0x34a6f8 <SDL_main+0x7d8>
+  34a6d8: aa1703e8     	mov	x8, x23
+  34a6dc: 7200033f     	tst	w25, #0x1
+  34a6e0: aa1503e1     	mov	x1, x21
+  34a6e4: f85f1509     	ldr	x9, [x8], #-0xf
+  34a6e8: aa1603e2     	mov	x2, x22
+  34a6ec: 9a890100     	csel	x0, x8, x9, eq
+  34a6f0: 94356da4     	bl	0x10a5d80 <memcmp@plt>
+  34a6f4: 34fffd60     	cbz	w0, 0x34a6a0 <SDL_main+0x780>
+  34a6f8: 39400268     	ldrb	w8, [x19]
+  34a6fc: 3607fc88     	tbz	w8, #0x0, 0x34a68c <SDL_main+0x76c>
+  34a700: f9400a60     	ldr	x0, [x19, #0x10]
+  34a704: 94356d5f     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a708: 17ffffe1     	b	0x34a68c <SDL_main+0x76c>
+  34a70c: aa1303e0     	mov	x0, x19
+  34a710: a9444ff4     	ldp	x20, x19, [sp, #0x40]
+  34a714: f9400bf9     	ldr	x25, [sp, #0x10]
+  34a718: a94357f6     	ldp	x22, x21, [sp, #0x30]
+  34a71c: a9425ff8     	ldp	x24, x23, [sp, #0x20]
+  34a720: a8c57bfd     	ldp	x29, x30, [sp], #0x50
+  34a724: d65f03c0     	ret
+  34a728: d10103ff     	sub	sp, sp, #0x40
+  34a72c: a9017bfd     	stp	x29, x30, [sp, #0x10]
+  34a730: f90013f5     	str	x21, [sp, #0x20]
+  34a734: a9034ff4     	stp	x20, x19, [sp, #0x30]
+  34a738: 910043fd     	add	x29, sp, #0x10
+  34a73c: d53bd054     	mrs	x20, TPIDR_EL0
+  34a740: f0006fd5     	adrp	x21, 0x1145000
+  34a744: 2a0003f3     	mov	w19, w0
+  34a748: f9401688     	ldr	x8, [x20, #0x28]
+  34a74c: f90007e8     	str	x8, [sp, #0x8]
+  34a750: b942f2a8     	ldr	w8, [x21, #0x2f0]
+  34a754: 37f800e8     	tbnz	w8, #0x1f, 0x34a770 <SDL_main+0x850>
+  34a758: 90fff341     	adrp	x1, 0x1b2000
+  34a75c: 910bbc21     	add	x1, x1, #0x2ef
+  34a760: 2a0803e0     	mov	w0, w8
+  34a764: 528007c2     	mov	w2, #0x3e               // =62
+  34a768: 94356d56     	bl	0x10a5cc0 <write@plt>
+  34a76c: b942f2a8     	ldr	w8, [x21, #0x2f0]
+  34a770: 528ccce9     	mov	w9, #0x6667             // =26215
+  34a774: 5280014c     	mov	w12, #0xa               // =10
+  34a778: 72acccc9     	movk	w9, #0x6666, lsl #16
+  34a77c: 79000fec     	strh	w12, [sp, #0x6]
+  34a780: 9b297e6a     	smull	x10, w19, w9
+  34a784: d37ffd4b     	lsr	x11, x10, #63
+  34a788: 9362fd4a     	asr	x10, x10, #34
+  34a78c: 0b0b014a     	add	w10, w10, w11
+  34a790: 9b297d49     	smull	x9, w10, w9
+  34a794: d37ffd2b     	lsr	x11, x9, #63
+  34a798: d362fd29     	lsr	x9, x9, #34
+  34a79c: 0b0b0129     	add	w9, w9, w11
+  34a7a0: 1b0ccd4b     	msub	w11, w10, w12, w19
+  34a7a4: 1b0ca929     	msub	w9, w9, w12, w10
+  34a7a8: 1100c16a     	add	w10, w11, #0x30
+  34a7ac: 1100c129     	add	w9, w9, #0x30
+  34a7b0: 390017ea     	strb	w10, [sp, #0x5]
+  34a7b4: 390013e9     	strb	w9, [sp, #0x4]
+  34a7b8: 37f800a8     	tbnz	w8, #0x1f, 0x34a7cc <SDL_main+0x8ac>
+  34a7bc: 910013e1     	add	x1, sp, #0x4
+  34a7c0: 2a0803e0     	mov	w0, w8
+  34a7c4: 52800062     	mov	w2, #0x3                // =3
+  34a7c8: 94356d3e     	bl	0x10a5cc0 <write@plt>
+  34a7cc: 93407e68     	sxtw	x8, w19
+  34a7d0: f0006fc9     	adrp	x9, 0x1145000
+  34a7d4: 913ec129     	add	x9, x9, #0xfb0
+  34a7d8: 2a1303e0     	mov	w0, w19
+  34a7dc: aa1f03e2     	mov	x2, xzr
+  34a7e0: 8b081521     	add	x1, x9, x8, lsl #5
+  34a7e4: 94356d3f     	bl	0x10a5ce0 <sigaction@plt>
+  34a7e8: f9401688     	ldr	x8, [x20, #0x28]
+  34a7ec: f94007e9     	ldr	x9, [sp, #0x8]
+  34a7f0: eb09011f     	cmp	x8, x9
+  34a7f4: 540000e1     	b.ne	0x34a810 <SDL_main+0x8f0>
+  34a7f8: 2a1303e0     	mov	w0, w19
+  34a7fc: a9434ff4     	ldp	x20, x19, [sp, #0x30]
+  34a800: f94013f5     	ldr	x21, [sp, #0x20]
+  34a804: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+  34a808: 910103ff     	add	sp, sp, #0x40
+  34a80c: 14356d61     	b	0x10a5d90 <raise@plt>
+  34a810: 94356d54     	bl	0x10a5d60 <__stack_chk_fail@plt>
+  34a814: d10443ff     	sub	sp, sp, #0x110
+  34a818: a90f7bfd     	stp	x29, x30, [sp, #0xf0]
+  34a81c: a9104ffc     	stp	x28, x19, [sp, #0x100]
+  34a820: 9103c3fd     	add	x29, sp, #0xf0
+  34a824: a93917a4     	stp	x4, x5, [x29, #-0x70]
+  34a828: d101c3a9     	sub	x9, x29, #0x70
+  34a82c: d100a3aa     	sub	x10, x29, #0x28
+  34a830: a93a1fa6     	stp	x6, x7, [x29, #-0x60]
+  34a834: d0fff402     	adrp	x2, 0x1cc000
+  34a838: 91059842     	add	x2, x2, #0x166
+  34a83c: ad0007e0     	stp	q0, q1, [sp]
+  34a840: d10143a3     	sub	x3, x29, #0x50
+  34a844: 52800a01     	mov	w1, #0x50               // =80
+  34a848: ad010fe2     	stp	q2, q3, [sp, #0x20]
+  34a84c: ad0217e4     	stp	q4, q5, [sp, #0x40]
+  34a850: ad031fe6     	stp	q6, q7, [sp, #0x60]
+  34a854: d53bd053     	mrs	x19, TPIDR_EL0
+  34a858: f9401668     	ldr	x8, [x19, #0x28]
+  34a85c: f81f83a8     	stur	x8, [x29, #-0x8]
+  34a860: 91008128     	add	x8, x9, #0x20
+  34a864: 910083a9     	add	x9, x29, #0x20
+  34a868: a93da3a9     	stp	x9, x8, [x29, #-0x28]
+  34a86c: 928003e8     	mov	x8, #-0x20              // =-32
+  34a870: 910003e9     	mov	x9, sp
+  34a874: f2dff008     	movk	x8, #0xff80, lsl #32
+  34a878: 91020129     	add	x9, x9, #0x80
+  34a87c: a93ea3a9     	stp	x9, x8, [x29, #-0x18]
+  34a880: ad400540     	ldp	q0, q1, [x10]
+  34a884: ad3d87a0     	stp	q0, q1, [x29, #-0x50]
+  34a888: 94356d46     	bl	0x10a5da0 <vsnprintf@plt>
+  34a88c: f9401668     	ldr	x8, [x19, #0x28]
+  34a890: f85f83a9     	ldur	x9, [x29, #-0x8]
+  34a894: eb09011f     	cmp	x8, x9
+  34a898: 540000a1     	b.ne	0x34a8ac <SDL_main+0x98c>
+  34a89c: a9504ffc     	ldp	x28, x19, [sp, #0x100]
+  34a8a0: a94f7bfd     	ldp	x29, x30, [sp, #0xf0]
+  34a8a4: 910443ff     	add	sp, sp, #0x110
+  34a8a8: d65f03c0     	ret
+  34a8ac: 94356d2d     	bl	0x10a5d60 <__stack_chk_fail@plt>
+  34a8b0: a9bd7bfd     	stp	x29, x30, [sp, #-0x30]!
+  34a8b4: f9000bf5     	str	x21, [sp, #0x10]
+  34a8b8: a9024ff4     	stp	x20, x19, [sp, #0x20]
+  34a8bc: 910003fd     	mov	x29, sp
+  34a8c0: f9400014     	ldr	x20, [x0]
+  34a8c4: b40002d4     	cbz	x20, 0x34a91c <SDL_main+0x9fc>
+  34a8c8: f9400408     	ldr	x8, [x0, #0x8]
+  34a8cc: aa0003f3     	mov	x19, x0
+  34a8d0: aa1403e0     	mov	x0, x20
+  34a8d4: eb14011f     	cmp	x8, x20
+  34a8d8: 54000180     	b.eq	0x34a908 <SDL_main+0x9e8>
+  34a8dc: aa0803f5     	mov	x21, x8
+  34a8e0: 14000004     	b	0x34a8f0 <SDL_main+0x9d0>
+  34a8e4: eb1402bf     	cmp	x21, x20
+  34a8e8: aa1503e8     	mov	x8, x21
+  34a8ec: 540000c0     	b.eq	0x34a904 <SDL_main+0x9e4>
+  34a8f0: 385e8ea9     	ldrb	w9, [x21, #-0x18]!
+  34a8f4: 3607ff89     	tbz	w9, #0x0, 0x34a8e4 <SDL_main+0x9c4>
+  34a8f8: f85f8100     	ldur	x0, [x8, #-0x8]
+  34a8fc: 94356ce1     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a900: 17fffff9     	b	0x34a8e4 <SDL_main+0x9c4>
+  34a904: f9400260     	ldr	x0, [x19]
+  34a908: f9000674     	str	x20, [x19, #0x8]
+  34a90c: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  34a910: f9400bf5     	ldr	x21, [sp, #0x10]
+  34a914: a8c37bfd     	ldp	x29, x30, [sp], #0x30
+  34a918: 14356cda     	b	0x10a5c80 <_ZdlPv@plt>
+  34a91c: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  34a920: f9400bf5     	ldr	x21, [sp, #0x10]
+  34a924: a8c37bfd     	ldp	x29, x30, [sp], #0x30
+  34a928: d65f03c0     	ret
+  34a92c: a9bd7bfd     	stp	x29, x30, [sp, #-0x30]!
+  34a930: a90157f6     	stp	x22, x21, [sp, #0x10]
+  34a934: a9024ff4     	stp	x20, x19, [sp, #0x20]
+  34a938: 910003fd     	mov	x29, sp
+  34a93c: 39402008     	ldrb	w8, [x0, #0x8]
+  34a940: 340000a8     	cbz	w8, 0x34a954 <SDL_main+0xa34>
+  34a944: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  34a948: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  34a94c: a8c37bfd     	ldp	x29, x30, [sp], #0x30
+  34a950: d65f03c0     	ret
+  34a954: f9400014     	ldr	x20, [x0]
+  34a958: aa0003f3     	mov	x19, x0
+  34a95c: f9400295     	ldr	x21, [x20]
+  34a960: b4ffff35     	cbz	x21, 0x34a944 <SDL_main+0xa24>
+  34a964: f9400688     	ldr	x8, [x20, #0x8]
+  34a968: aa1503e0     	mov	x0, x21
+  34a96c: eb15011f     	cmp	x8, x21
+  34a970: 540001a0     	b.eq	0x34a9a4 <SDL_main+0xa84>
+  34a974: aa0803f6     	mov	x22, x8
+  34a978: 14000004     	b	0x34a988 <SDL_main+0xa68>
+  34a97c: eb1502df     	cmp	x22, x21
+  34a980: aa1603e8     	mov	x8, x22
+  34a984: 540000c0     	b.eq	0x34a99c <SDL_main+0xa7c>
+  34a988: 385e8ec9     	ldrb	w9, [x22, #-0x18]!
+  34a98c: 3607ff89     	tbz	w9, #0x0, 0x34a97c <SDL_main+0xa5c>
+  34a990: f85f8100     	ldur	x0, [x8, #-0x8]
+  34a994: 94356cbb     	bl	0x10a5c80 <_ZdlPv@plt>
+  34a998: 17fffff9     	b	0x34a97c <SDL_main+0xa5c>
+  34a99c: f9400268     	ldr	x8, [x19]
+  34a9a0: f9400100     	ldr	x0, [x8]
+  34a9a4: f9000695     	str	x21, [x20, #0x8]
+  34a9a8: a9424ff4     	ldp	x20, x19, [sp, #0x20]
+  34a9ac: a94157f6     	ldp	x22, x21, [sp, #0x10]
+  34a9b0: a8c37bfd     	ldp	x29, x30, [sp], #0x30
+  34a9b4: 14356cb3     	b	0x10a5c80 <_ZdlPv@plt>
+  34a9b8: a9bf7bfd     	stp	x29, x30, [sp, #-0x10]!
+  34a9bc: 910003fd     	mov	x29, sp
+  34a9c0: d0fff420     	adrp	x0, 0x1d0000
+  34a9c4: 9111bc00     	add	x0, x0, #0x46f
+  34a9c8: 94000001     	bl	0x34a9cc <SDL_main+0xaac>
+  34a9cc: a9be7bfd     	stp	x29, x30, [sp, #-0x20]!
+  34a9d0: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  34a9d4: 910003fd     	mov	x29, sp
+  34a9d8: aa0003f4     	mov	x20, x0
+  34a9dc: 52800200     	mov	w0, #0x10               // =16
+  34a9e0: 94356cf4     	bl	0x10a5db0 <__cxa_allocate_exception@plt>
+  34a9e4: aa0003f3     	mov	x19, x0
+  34a9e8: aa1403e1     	mov	x1, x20
+  34a9ec: 9400000c     	bl	0x34aa1c <SDL_main+0xafc>
+  34a9f0: 90006f41     	adrp	x1, 0x1132000 <kBiosDispatchTable+0x14280>
+  34a9f4: 90006f42     	adrp	x2, 0x1132000 <kBiosDispatchTable+0x14280>
+  34a9f8: aa1303e0     	mov	x0, x19
+  34a9fc: f945e821     	ldr	x1, [x1, #0xbd0]
+  34aa00: f945ec42     	ldr	x2, [x2, #0xbd8]
+  34aa04: 94356cef     	bl	0x10a5dc0 <__cxa_throw@plt>
+  34aa08: aa0003f4     	mov	x20, x0
+  34aa0c: aa1303e0     	mov	x0, x19
+  34aa10: 94356cf0     	bl	0x10a5dd0 <__cxa_free_exception@plt>
+  34aa14: aa1403e0     	mov	x0, x20
+  34aa18: 94355d2f     	bl	0x10a1ed4 <_ZN6armv4t10ArmCodegen10emit_blockERKNSt6__ndk16vectorINS_5InstrENS1_9allocatorIS3_EEEERKNS_10CodegenCtxE+0x71f4>
+  34aa1c: a9be7bfd     	stp	x29, x30, [sp, #-0x20]!
+  34aa20: f9000bf3     	str	x19, [sp, #0x10]
+  34aa24: 910003fd     	mov	x29, sp
+  34aa28: aa0003f3     	mov	x19, x0
+  34aa2c: 94356ced     	bl	0x10a5de0 <_ZNSt11logic_errorC2EPKc@plt>
+  34aa30: 90006f48     	adrp	x8, 0x1132000 <kBiosDispatchTable+0x14280>
+  34aa34: f945f108     	ldr	x8, [x8, #0xbe0]
+  34aa38: 91004108     	add	x8, x8, #0x10
+  34aa3c: f9000268     	str	x8, [x19]
+  34aa40: f9400bf3     	ldr	x19, [sp, #0x10]
+  34aa44: a8c27bfd     	ldp	x29, x30, [sp], #0x20
+  34aa48: d65f03c0     	ret
+  34aa4c: a9be7bfd     	stp	x29, x30, [sp, #-0x20]!
+  34aa50: f9000bf3     	str	x19, [sp, #0x10]
+  34aa54: 910003fd     	mov	x29, sp
+  34aa58: 52800100     	mov	w0, #0x8                // =8
+  34aa5c: 94356cd5     	bl	0x10a5db0 <__cxa_allocate_exception@plt>
+  34aa60: aa0003f3     	mov	x19, x0
+  34aa64: 94356ce3     	bl	0x10a5df0 <_ZNSt20bad_array_new_lengthC1Ev@plt>
+  34aa68: 90006f41     	adrp	x1, 0x1132000 <kBiosDispatchTable+0x14280>
+  34aa6c: 90006f42     	adrp	x2, 0x1132000 <kBiosDispatchTable+0x14280>
+  34aa70: aa1303e0     	mov	x0, x19
+  34aa74: f945f421     	ldr	x1, [x1, #0xbe8]
+  34aa78: f945f842     	ldr	x2, [x2, #0xbf0]
+  34aa7c: 94356cd1     	bl	0x10a5dc0 <__cxa_throw@plt>
+  34aa80: d10243ff     	sub	sp, sp, #0x90
+  34aa84: a9047bfd     	stp	x29, x30, [sp, #0x40]
+  34aa88: f9002bf9     	str	x25, [sp, #0x50]
+  34aa8c: a9065ff8     	stp	x24, x23, [sp, #0x60]
+  34aa90: a90757f6     	stp	x22, x21, [sp, #0x70]
+  34aa94: a9084ff4     	stp	x20, x19, [sp, #0x80]
+  34aa98: 910103fd     	add	x29, sp, #0x40
+  34aa9c: d53bd059     	mrs	x25, TPIDR_EL0
+  34aaa0: aa0303f3     	mov	x19, x3
+  34aaa4: f9401728     	ldr	x8, [x25, #0x28]
+  34aaa8: eb02003f     	cmp	x1, x2
+  34aaac: f81f83a8     	stur	x8, [x29, #-0x8]
+  34aab0: 910023e8     	add	x8, sp, #0x8
+  34aab4: a901a3e0     	stp	x0, x8, [sp, #0x18]
+  34aab8: 910043e8     	add	x8, sp, #0x10
+  34aabc: a9008fe3     	stp	x3, x3, [sp, #0x8]
+  34aac0: f90017e8     	str	x8, [sp, #0x28]
+  34aac4: 3900c3ff     	strb	wzr, [sp, #0x30]
+  34aac8: 54000460     	b.eq	0x34ab54 <SDL_main+0xc34>
+  34aacc: aa0203f4     	mov	x20, x2
+  34aad0: aa0103f5     	mov	x21, x1
+  34aad4: 1400000f     	b	0x34ab10 <SDL_main+0xbf0>
+  34aad8: 531f7ac8     	lsl	w8, w22, #1
+  34aadc: 38001668     	strb	w8, [x19], #0x1
+  34aae0: b40000b6     	cbz	x22, 0x34aaf4 <SDL_main+0xbd4>
+  34aae4: aa1303e0     	mov	x0, x19
+  34aae8: aa1703e1     	mov	x1, x23
+  34aaec: aa1603e2     	mov	x2, x22
+  34aaf0: 94356cc4     	bl	0x10a5e00 <memmove@plt>
+  34aaf4: 38366a7f     	strb	wzr, [x19, x22]
+  34aaf8: 910022b5     	add	x21, x21, #0x8
+  34aafc: f9400be8     	ldr	x8, [sp, #0x10]
+  34ab00: eb1402bf     	cmp	x21, x20
+  34ab04: 91006113     	add	x19, x8, #0x18
+  34ab08: f9000bf3     	str	x19, [sp, #0x10]
+  34ab0c: 54000240     	b.eq	0x34ab54 <SDL_main+0xc34>
+  34ab10: f94002b7     	ldr	x23, [x21]
+  34ab14: aa1703e0     	mov	x0, x23
+  34ab18: 94356c96     	bl	0x10a5d70 <strlen@plt>
+  34ab1c: b100401f     	cmn	x0, #0x10
+  34ab20: 54000322     	b.hs	0x34ab84 <SDL_main+0xc64>
+  34ab24: aa0003f6     	mov	x22, x0
+  34ab28: f1005c1f     	cmp	x0, #0x17
+  34ab2c: 54fffd63     	b.lo	0x34aad8 <SDL_main+0xbb8>
+  34ab30: b2400ec8     	orr	x8, x22, #0xf
+  34ab34: 91000518     	add	x24, x8, #0x1
+  34ab38: aa1803e0     	mov	x0, x24
+  34ab3c: 94356c3d     	bl	0x10a5c30 <_Znwm@plt>
+  34ab40: b2400308     	orr	x8, x24, #0x1
+  34ab44: a9008276     	stp	x22, x0, [x19, #0x8]
+  34ab48: f9000268     	str	x8, [x19]
+  34ab4c: aa0003f3     	mov	x19, x0
+  34ab50: 17ffffe5     	b	0x34aae4 <SDL_main+0xbc4>
+  34ab54: f9401728     	ldr	x8, [x25, #0x28]
+  34ab58: f85f83a9     	ldur	x9, [x29, #-0x8]
+  34ab5c: eb09011f     	cmp	x8, x9
+  34ab60: 54000321     	b.ne	0x34abc4 <SDL_main+0xca4>
+  34ab64: aa1303e0     	mov	x0, x19
+  34ab68: a9484ff4     	ldp	x20, x19, [sp, #0x80]
+  34ab6c: f9402bf9     	ldr	x25, [sp, #0x50]
+  34ab70: a94757f6     	ldp	x22, x21, [sp, #0x70]
+  34ab74: a9465ff8     	ldp	x24, x23, [sp, #0x60]
+  34ab78: a9447bfd     	ldp	x29, x30, [sp, #0x40]
+  34ab7c: 910243ff     	add	sp, sp, #0x90
+  34ab80: d65f03c0     	ret
+  34ab84: f9401728     	ldr	x8, [x25, #0x28]
+  34ab88: f85f83a9     	ldur	x9, [x29, #-0x8]
+  34ab8c: eb09011f     	cmp	x8, x9
+  34ab90: 540001a1     	b.ne	0x34abc4 <SDL_main+0xca4>
+  34ab94: aa1303e0     	mov	x0, x19
+  34ab98: 94000024     	bl	0x34ac28 <SDL_main+0xd08>
+  34ab9c: 14000001     	b	0x34aba0 <SDL_main+0xc80>
+  34aba0: aa0003f3     	mov	x19, x0
+  34aba4: 910063e0     	add	x0, sp, #0x18
+  34aba8: 94000008     	bl	0x34abc8 <SDL_main+0xca8>
+  34abac: f9401728     	ldr	x8, [x25, #0x28]
+  34abb0: f85f83a9     	ldur	x9, [x29, #-0x8]
+  34abb4: eb09011f     	cmp	x8, x9
+  34abb8: 54000061     	b.ne	0x34abc4 <SDL_main+0xca4>
+  34abbc: aa1303e0     	mov	x0, x19
+  34abc0: 94355cc5     	bl	0x10a1ed4 <_ZN6armv4t10ArmCodegen10emit_blockERKNSt6__ndk16vectorINS_5InstrENS1_9allocatorIS3_EEEERKNS_10CodegenCtxE+0x71f4>
+  34abc4: 94356c67     	bl	0x10a5d60 <__stack_chk_fail@plt>
+  34abc8: 39406008     	ldrb	w8, [x0, #0x18]
+  34abcc: 34000048     	cbz	w8, 0x34abd4 <SDL_main+0xcb4>
+  34abd0: d65f03c0     	ret
+  34abd4: a9be7bfd     	stp	x29, x30, [sp, #-0x20]!
+  34abd8: a9014ff4     	stp	x20, x19, [sp, #0x10]
+  34abdc: 910003fd     	mov	x29, sp
+  34abe0: a940a009     	ldp	x9, x8, [x0, #0x8]
+  34abe4: f9400108     	ldr	x8, [x8]
+  34abe8: f9400133     	ldr	x19, [x9]
+  34abec: eb13011f     	cmp	x8, x19
+  34abf0: 54000160     	b.eq	0x34ac1c <SDL_main+0xcfc>
+  34abf4: aa0803f4     	mov	x20, x8
+  34abf8: 14000004     	b	0x34ac08 <SDL_main+0xce8>
+  34abfc: eb13029f     	cmp	x20, x19
+  34ac00: aa1403e8     	mov	x8, x20
+  34ac04: 540000c0     	b.eq	0x34ac1c <SDL_main+0xcfc>
+  34ac08: 385e8e89     	ldrb	w9, [x20, #-0x18]!
+  34ac0c: 3607ff89     	tbz	w9, #0x0, 0x34abfc <SDL_main+0xcdc>
+  34ac10: f85f8100     	ldur	x0, [x8, #-0x8]
+  34ac14: 94356c1b     	bl	0x10a5c80 <_ZdlPv@plt>
+  34ac18: 17fffff9     	b	0x34abfc <SDL_main+0xcdc>
+  34ac1c: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+  34ac20: a8c27bfd     	ldp	x29, x30, [sp], #0x20
+  34ac24: d65f03c0     	ret
+  34ac28: a9bf7bfd     	stp	x29, x30, [sp, #-0x10]!
+  34ac2c: 910003fd     	mov	x29, sp
+  34ac30: d0fff440     	adrp	x0, 0x1d4000
+  34ac34: 91207800     	add	x0, x0, #0x81e
+  34ac38: 97ffff65     	bl	0x34a9cc <SDL_main+0xaac>
+  34ac3c: a9bf7bfd     	stp	x29, x30, [sp, #-0x10]!
+  34ac40: 910003fd     	mov	x29, sp
+  34ac44: d0fff420     	adrp	x0, 0x1d0000
+  34ac48: 9111bc00     	add	x0, x0, #0x46f
+  34ac4c: 97ffff60     	bl	0x34a9cc <SDL_main+0xaac>
+  349f6c: 94356f2d     	bl	0x10a5c20 <_Z17mmz_reset_sessionv@plt>
+  34a00c: 94356f15     	bl	0x10a5c60 <_ZN9gbarecomp22mobile_prepare_processERNSt6__ndk16vectorINS0_12basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS5_IS7_EEEERKNS_20MobileProcessOptionsE@plt>
+  34a408: 94356e3e     	bl	0x10a5d00 <_Z13mmz_game_mainiPPc@plt>
