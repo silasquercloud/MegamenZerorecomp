@@ -2,6 +2,8 @@
 
 Port em desenvolvimento do [MegaManZeroRecomp](https://github.com/mstan/MegaManZeroRecomp), usando o runtime [gbarecomp](https://github.com/mstan/gbarecomp). O APK de teste `0.1.0-test.1` foi compilado e validado como pacote ARM64; gameplay em dispositivo ainda não foi testado. Consulte [PROGRESS.md](PROGRESS.md) e [Releases](https://github.com/silasquercloud/MegamenZerorecomp/releases).
 
+[Baixar APK ARM64 0.1.0-test.1](https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.1.0-test.1/MegaManZeroNative-0.1.0-test.1-arm64-v8a.apk). Download público conferido e SHA-256 comparado com o build local.
+
 ## Build
 
 Linux x86-64, Python 3.12+, Git, curl e GCC/G++. O setup instala ferramentas em `/workspace`, sem modificar fontes do upstream. Os submódulos estão fixados por commit; recomp-ui fornece o menu nativo de configurações.
@@ -29,6 +31,8 @@ ROM, BIOS, saves e C++ derivado são locais e ignorados pelo Git. O build recusa
 O workflow manual `Android ARM64` prepara ferramentas, testa o framework, gera o corpus, compila, verifica ABI/assinatura/alinhamento, publica o APK como artefato e cria uma prerelease. Requer runner Linux x64 com label `mmz-private-assets`, acesso a `/workspace`, Python 3.12+, GCC/G++, Git, curl e `gh`; provisione sua ROM/BIOS fora do checkout e configure os caminhos nas variáveis de repositório `MMZ_ROM_PATH` e `MMZ_BIOS_PATH`. Arquivos proprietários não são enviados como artefatos. O workflow ainda não foi executado neste projeto.
 
 Após um build real, instale o APK e importe os dois arquivos pelo seletor Android. “Jogar” verifica os hashes e abre `GbaGameActivity`, que carrega SDL e o runtime nativo. Instalação, biblioteca carregando e gameplay precisam ser verificados separadamente em dispositivo. Os dados ficam no armazenamento privado do aplicativo; desinstalar apaga os saves.
+
+A prerelease atual foi publicada pelo [job de publicação verificada](https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38124640099): o upload direto do ambiente falhou na autenticação de `uploads.github.com`, e o job verificou o APK pré-compilado e usou seu próprio token para publicar. A branch `codex/verified-apk-publication` contém somente o código, workflow e pacote público de teste; não contém ROM/BIOS. Esse job não executou uma nova recompilação do jogo. O workflow completo de build continua dependendo do runner e arquivos privados descritos acima.
 
 ## Créditos
 
