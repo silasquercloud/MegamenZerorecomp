@@ -64,3 +64,12 @@ Ainda faltam validação de instalação, boot e gameplay em dispositivo, contro
 - APK HTTPS: https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.0-test.1/MegaManZeroNative-0.2.0-test.1-arm64-v8a.apk
 - Download público realizado novamente, SHA-256 idêntico ao APK local. Avisos de artes/fonte presentes no APK final. Mesma chave de teste de 0.1 para permitir atualização preservando arquivos privados.
 - Tentativa Android adicional: SDK Emulator e imagem Google APIs 30 x86_64 instalados, emulador iniciado sem KVM com `-accel off`, ADB conectado. A imagem anuncia ARM64 e `libndk_translation.so`. Porém o boot do sistema não disponibilizou o serviço `package`; instalação retornou `Can't find service: package`. Após mais de 15 minutos de inicialização por software, não houve `sys.boot_completed=1`. Portanto não foram validados launcher renderizado/toques, superfície Android, áudio físico, gameplay Android ou save/reload. Não há screenshot do APK apresentada como aprovada. Framebuffers em validation/ são Linux e estão identificados.
+
+## Enhanced 0.2.1-test.1
+
+- Usuário confirmou introdução real da 0.2.0 no Android ARM64; lentidão ocasional ainda sem perfil do aparelho.
+- Overlay Android com FPS de apresentações SDL reais, frametime/pico, sim Hz, CPU da thread, tempo de vídeo e dimensões efetivas. Toggle/quatro posições/preferências persistentes; amostragem 500 ms e logs MMZ_PERF ~5 s.
+- Caps 30/60/90/120/ilimitado/auto: apresentação 30 separada da lógica; acima de 60 explicitamente limitado ao framebuffer original. FramePacer/áudio/input preservados; sem --uncapped.
+- Upscale SDL real 1–8×, automático econômico 1×; sete modos de proporção; nearest/bilinear aplicados às texturas. Alteração ao vivo pelo botão VÍDEO, JNI atômico e operações SDL exclusivamente na thread de renderização.
+- Novo ícone de capacete vermelho gerado/local, adaptativo e cinco densidades, sem placeholder. Importações, launcher, volume, controles, saves e logs preservados.
+- Teste SDL software real: texturas 1–8×, filtros com pixels distintos, proporções, caps; 60 iterações simuladas/30 apresentações no modo 30 e 60 nos demais. Benchmark host registrado; não representa GPU Android. Boot real 120 frames repetido; seis testes existentes executados. Relatório em validation/enhanced/NATIVE-REPORT.md reconhece fallback ARMv4T e limites de validação Android.

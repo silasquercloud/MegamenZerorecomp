@@ -17,7 +17,7 @@ endif()
 add_subdirectory("${GBARECOMP_ROOT}" engine EXCLUDE_FROM_ALL)
 include(android/native/instrument-runtime.cmake)
 set(GAME_SRC "${CMAKE_CURRENT_SOURCE_DIR}/MegaManZeroRecomp/src")
-add_library(main SHARED android/native/entry.cpp "${GAME_SRC}/main.cpp"
+add_library(main SHARED android/native/entry.cpp android/native/enhanced.cpp "${GAME_SRC}/main.cpp"
     "${GAME_SRC}/mmz_extended_view.cpp" "${GAME_SRC}/mods/mmz_adaptive_view_plugin.cpp" ${GAME_CODE})
 set_source_files_properties("${GAME_SRC}/main.cpp" PROPERTIES COMPILE_DEFINITIONS "main=mmz_game_main")
 set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O1;-g0")

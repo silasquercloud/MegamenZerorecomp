@@ -55,3 +55,9 @@ A prerelease atual foi publicada pelo [job de publicação verificada](https://g
 ## Créditos
 
 Matthew Stanley e colaboradores: MegaManZeroRecomp, gbarecomp e recomp-ui, sob PolyForm Noncommercial 1.0.0 (licenças preservadas nos submódulos). SDL e demais componentes mantêm suas licenças e atribuições upstream. Mega Man Zero e seus arquivos originais pertencem aos respectivos titulares.
+
+### Enhanced 0.2.1-test.1
+
+Configurações persistentes de vídeo/desempenho no launcher e no botão VÍDEO durante o jogo: overlay FPS/frametime/simulação, posição/toggle, apresentação 30 ou ~60, upscale real até 8×, proporções de tela e nearest/bilinear. Acima de 60 não produz novos frames: 90/120/ilimitado são explicitamente limitados pelo framebuffer do GBA; não aceleram a lógica. Automático usa upscale 1× econômico. Ícone adaptativo novo incluído.
+
+[Relatório técnico, métricas e limitações](validation/enhanced/NATIVE-REPORT.md). Testes SDL reais: `bash tools/test-enhanced-video.sh`. O usuário confirmou introdução no Android com 0.2.0; esta build ainda requer validação do overlay e desempenho no aparelho. Não há declaração de cobertura 100% estática: fallback ARMv4T upstream permanece.

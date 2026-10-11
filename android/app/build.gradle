@@ -3,8 +3,8 @@ def gameRoot = rootDir.parentFile
 def engineRoot = new File(gameRoot, 'gbarecomp')
 ext.gbaGame = [
     applicationId: 'com.silasquercloud.megamanzeronative',
-    versionCode: 2, versionName: '0.2.0-test.1',
-    title: 'Mega Man Zero Native', romLabel: 'Mega Man Zero (USA), revisão 0',
+    versionCode: 3, versionName: '0.2.1-test.1',
+    title: 'Mega Man Zero Native Enhanced', romLabel: 'Mega Man Zero (USA), revisão 0',
     romSha1: ['193b14120119162518a73c70876f0b8bffdbd96e'],
     romSize: 8388608, romFile: 'megaman_zero_usa.gba', biosRequired: true,
     orientation: 'landscape', payloadVersion: '2',
