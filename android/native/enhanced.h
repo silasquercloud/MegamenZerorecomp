@@ -18,3 +18,8 @@ void mmz_vulkan_close();
 const unsigned char* mmz_effects(const unsigned char*,int,int);
 unsigned mmz_touch_mask();
 void mmz_phase(double,double,double,double,double,double,unsigned long long,unsigned);
+
+void mmz_reset_session();
+double mmz_clock_ms();
+void mmz_interpreter_cost(double started);
+struct MmzInterpreterScope {double started=mmz_clock_ms();~MmzInterpreterScope(){mmz_interpreter_cost(started);}};

@@ -8,7 +8,7 @@ set(GBARECOMP_SELFHEAL_RECOMPILE_DEFAULT OFF CACHE BOOL "" FORCE)
 add_subdirectory("${REPO}/gbarecomp" engine EXCLUDE_FROM_ALL)
 file(GLOB GAME_CODE "${REPO}/android/generated/game/*.cpp")
 add_executable(mmz_boot_check "${REPO}/MegaManZeroRecomp/src/main.cpp" "${REPO}/MegaManZeroRecomp/src/mmz_extended_view.cpp" "${REPO}/MegaManZeroRecomp/src/mods/mmz_adaptive_view_plugin.cpp" ${GAME_CODE})
-set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O2;-g0")
+set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O1;-g0")
 target_include_directories(mmz_boot_check PRIVATE "${REPO}/MegaManZeroRecomp/src" "${REPO}/gbarecomp/src/runtime" "${REPO}/gbarecomp/src/gba" "${REPO}/gbarecomp/src/debug" "${REPO}/gbarecomp/src/armv4t")
 target_link_libraries(mmz_boot_check PRIVATE "-Wl,--start-group" gbarecomp_runtime gbarecomp_debug gbarecomp_gba gbarecomp_armv4t "-Wl,--end-group")
 

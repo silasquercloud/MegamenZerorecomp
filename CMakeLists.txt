@@ -20,7 +20,7 @@ set(GAME_SRC "${CMAKE_CURRENT_SOURCE_DIR}/MegaManZeroRecomp/src")
 add_library(main SHARED android/native/entry.cpp android/native/enhanced.cpp android/native/vulkan/presenter.cpp android/native/vulkan/android_bridge.cpp "${GAME_SRC}/main.cpp"
     "${GAME_SRC}/mmz_extended_view.cpp" "${GAME_SRC}/mods/mmz_adaptive_view_plugin.cpp" ${GAME_CODE})
 set_source_files_properties("${GAME_SRC}/main.cpp" PROPERTIES COMPILE_DEFINITIONS "main=mmz_game_main")
-set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O2;-g0")
+set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O1;-g0")
 target_include_directories(main PRIVATE "${GAME_SRC}" "${GBARECOMP_ROOT}/src/debug" "${GBARECOMP_ROOT}/src/gba" "${GBARECOMP_ROOT}/src/runtime" "${GBARECOMP_ROOT}/src/armv4t")
 target_link_libraries(main PRIVATE "-Wl,--start-group" gbarecomp_runtime gbarecomp_debug gbarecomp_gba gbarecomp_armv4t "-Wl,--end-group" SDL2::SDL2)
 # The runtime owns SDL_Renderer2 glue; recomp-ui supplies the single ImGui

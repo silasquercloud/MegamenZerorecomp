@@ -83,3 +83,13 @@ Ainda faltam validação de instalação, boot e gameplay em dispositivo, contro
 - Actions https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38130128081 — sucesso: checksums de todos os anexos, APK ELF/ABI/ausência de dumps, assinatura, zipalign e publicação. É verificação do APK compilado localmente, não rebuild do corpus privado.
 - Relatório, símbolos ARM64, logs SDL, metadados APK e SHA256SUMS anexados. Download HTTPS público comparado byte a byte com APK local: idêntico.
 - ADB sem dispositivo. Nenhuma captura Android desta versão foi gerada; overlay/opções ao vivo/desempenho físico ainda pendentes no aparelho. O interpretador fallback upstream permanece documentado; FPS acima de ~60 não foi desbloqueado.
+
+## 1.0.0-rc.1 — conclusão técnica da candidata
+
+- Vulkan NDK real integrado com superfície Android, swapchain FIFO, uploads por slots, fences/semáforos/barreiras, nearest/bilinear e fallback SDL. Núcleo testado no Linux com validation layers, escalas 1–8, resize e reabertura; integração e lifecycle no aparelho ainda pendentes.
+- AJUSTES ao vivo reúne CRT/scanlines/LCD/monocromático, escalas/proporções/filtros, API, FPS e controles persistentes. Novo overlay multitouch com artes locais, macro simultânea remapeável e posições/tamanho/opacidade editáveis. Atualizada a ajuda do launcher.
+- Removida limitação redundante perto de 60 Hz; espera ativa reduzida preservando FramePacer. Sem alteração da velocidade de simulação/áudio. Opções acima de 60 continuam com limitação explicitada. Métricas por subsistema, p95/p99, custo da ponte interpretada e marcadores de primeira apresentação real/reabertura.
+- Corpus mantido em -O1 após experiência O2 sem ganho comprovado. 12.000 frames reais preservam PNG de referência; 12 misses/78 instruções interpretadas, custo total da ponte ~1,17 ms nesse percurso Linux. 600 frames com SDL e Vulkan, respectivamente 59,277/57,557 FPS, sem fallback interpretado nesse trecho. Comparação exploratória com diferenças documentadas; não prova desempenho de GPU Android.
+- Testes SDL (escala/filtros/proporções/caps), estado multitouch/macro, efeitos, seis testes upstream, regressão de boot e Vulkan passaram. Relatório e resultados em validation/rc1/.
+- GitHub Actions 38153319029: testes Vulkan/controles/filtros e compilação NDK ARM64 dos componentes públicos passaram. Full APK usa corpus privado e build local; registro de runner privado recebeu 403. Não apresentar CI parcial como rebuild completo.
+- Nenhum dispositivo ADB disponível. Final exige validação real de gameplay, áudio físico, controles/macro, saves, troca de API, pausa/retomada e estabilidade. Publicar como prerelease RC, mantendo pendências explícitas.

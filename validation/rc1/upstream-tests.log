@@ -1,0 +1,18 @@
+Internal ctest changing into directory: /workspace/.mmz-build/host
+Test project /workspace/.mmz-build/host
+    Start 26: audio_playback_tests
+1/6 Test #26: audio_playback_tests .............   Passed    0.05 sec
+    Start 34: armv4t_tests
+2/6 Test #34: armv4t_tests .....................   Passed    0.01 sec
+    Start 35: thumb_tests
+3/6 Test #35: thumb_tests ......................   Passed    0.01 sec
+    Start 43: ppu_smoke_tests
+4/6 Test #43: ppu_smoke_tests ..................   Passed    0.33 sec
+    Start 44: save_config_tests
+5/6 Test #44: save_config_tests ................   Passed    0.01 sec
+    Start 46: touch_input_tests
+6/6 Test #46: touch_input_tests ................   Passed    0.03 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.45 sec

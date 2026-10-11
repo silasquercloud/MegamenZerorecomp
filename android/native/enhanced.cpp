@@ -13,6 +13,7 @@
 namespace {
 std::atomic<unsigned> revision{1};
 std::atomic<double> lastPresented{0};
+double interpreterMs=0;unsigned interpreterCalls=0;
 std::atomic<bool> reset{false};
 std::atomic<int> cap{0},scale{0},aspect{0},linear{0};
 std::mutex lock;
@@ -84,3 +85,8 @@ unsigned mmz_touch_mask(){return touch.load();}
 void mmz_phase(double guest,double ppu,double audio,double input,double pacer,double present,unsigned long long interpreted,unsigned misses){std::lock_guard<std::mutex> guard(lock);stats[17]=guest;stats[18]=ppu;stats[19]=audio;stats[20]=input;stats[21]=pacer;stats[22]=interpreted;stats[23]=misses;stats[25]=present;}
 extern "C" JNIEXPORT void JNICALL Java_com_silasquercloud_megamanzeronative_VideoSettings_effect(JNIEnv*,jclass,jint e){effect=std::clamp(int(e),0,4);}
 extern "C" JNIEXPORT void JNICALL Java_com_silasquercloud_megamanzeronative_TouchOverlay_keys(JNIEnv*,jclass,jint mask){touch=unsigned(mask)&1023;}
+
+bool mmz_presented(){return lastPresented.load()>0;}
+void mmz_reset_session(){lastFrame=0;touch=0;interpreterMs=0;interpreterCalls=0;lastPresented=0;reset=true;std::lock_guard<std::mutex> guard(lock);std::fill(stats,stats+26,0.);}
+double mmz_clock_ms(){return now()*1000.;}
+void mmz_interpreter_cost(double started){interpreterMs+=mmz_clock_ms()-started;++interpreterCalls;if(interpreterCalls<=16 || interpreterCalls%1024==0)std::fprintf(stderr,"MMZ_INTERPRETER dispatch_calls=%u total_bridge_ms=%.6f\n",interpreterCalls,interpreterMs);}

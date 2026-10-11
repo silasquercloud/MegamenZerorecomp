@@ -1,0 +1,1 @@
+PASS: old Android argument rejected; corrected native boot produces 120 real GBA frames, zero dispatch misses.

@@ -1,0 +1,16 @@
+Final O1 corpus: 12000 real frames; final PNG matches previous O1 baseline byte-for-byte.
+SHA256 8e83f9ee32401cba1b04c46988d0c4541b61664a33f073dd64c516fa39d7b780
+MMZ_INTERPRETER dispatch_calls=1 total_bridge_ms=0.039664
+MMZ_INTERPRETER dispatch_calls=2 total_bridge_ms=0.188685
+MMZ_INTERPRETER dispatch_calls=3 total_bridge_ms=0.551312
+MMZ_INTERPRETER dispatch_calls=4 total_bridge_ms=0.640060
+MMZ_INTERPRETER dispatch_calls=5 total_bridge_ms=0.828020
+MMZ_INTERPRETER dispatch_calls=6 total_bridge_ms=0.848653
+MMZ_INTERPRETER dispatch_calls=7 total_bridge_ms=0.966746
+MMZ_INTERPRETER dispatch_calls=8 total_bridge_ms=0.980551
+MMZ_INTERPRETER dispatch_calls=9 total_bridge_ms=1.000593
+MMZ_INTERPRETER dispatch_calls=10 total_bridge_ms=1.015892
+MMZ_INTERPRETER dispatch_calls=11 total_bridge_ms=1.035011
+MMZ_INTERPRETER dispatch_calls=12 total_bridge_ms=1.168746
+final_pc=0x080c88f2 unmapped=0 io_unhandled=0 steps=95995 cycles=0 ppu_vcount=23 ppu_frames=12000 frames_presented=0
+self_heal_coverage=NOT_STATIC dispatch_misses=12 interpreted_insns=78 healed_native=0 native_calls=0 inflight=0 failed=0

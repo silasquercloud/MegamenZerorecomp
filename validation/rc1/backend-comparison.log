@@ -23,20 +23,20 @@ MMZ_VK_SWAPCHAIN 640x480 images=3
 MMZ_VK_READY gpu=llvmpipe (LLVM 19.1.7, 256 bits) images=3 upload_slots=2 present=FIFO extent=640x480
 MMZ_VK_FIRST_PRESENT result=0 framebuffer=240x160 upscale=8
 SDL_DRIVER opengl
-COMPARE api=SDL scale=1 linear=0 presents=90 mean_ms=10.204 p95_ms=32.498 p99_ms=241.384 thread_cpu_ms=3.418
+COMPARE api=SDL scale=1 linear=0 presents=90 mean_ms=2.159 p95_ms=5.895 p99_ms=10.847 thread_cpu_ms=0.540
 SDL_DRIVER opengl
-COMPARE api=SDL scale=1 linear=1 presents=90 mean_ms=8.932 p95_ms=13.569 p99_ms=149.340 thread_cpu_ms=2.028
+COMPARE api=SDL scale=1 linear=1 presents=90 mean_ms=2.883 p95_ms=7.401 p99_ms=28.851 thread_cpu_ms=0.653
 SDL_DRIVER opengl
-COMPARE api=SDL scale=4 linear=0 presents=90 mean_ms=14.593 p95_ms=32.319 p99_ms=171.755 thread_cpu_ms=2.272
+COMPARE api=SDL scale=4 linear=0 presents=90 mean_ms=12.220 p95_ms=37.017 p99_ms=212.092 thread_cpu_ms=2.547
 SDL_DRIVER opengl
-COMPARE api=SDL scale=4 linear=1 presents=90 mean_ms=18.331 p95_ms=35.708 p99_ms=280.093 thread_cpu_ms=2.933
+COMPARE api=SDL scale=4 linear=1 presents=90 mean_ms=10.573 p95_ms=26.199 p99_ms=88.356 thread_cpu_ms=1.752
 SDL_DRIVER opengl
-COMPARE api=SDL scale=8 linear=0 presents=90 mean_ms=57.380 p95_ms=120.492 p99_ms=764.480 thread_cpu_ms=3.712
+COMPARE api=SDL scale=8 linear=0 presents=90 mean_ms=46.752 p95_ms=170.768 p99_ms=448.811 thread_cpu_ms=7.940
 SDL_DRIVER opengl
-COMPARE api=SDL scale=8 linear=1 presents=90 mean_ms=54.889 p95_ms=93.354 p99_ms=117.236 thread_cpu_ms=1.681
-COMPARE api=Vulkan scale=1 linear=0 presents=90 mean_ms=7.006 p95_ms=21.301 p99_ms=69.205 thread_cpu_ms=0.621
-COMPARE api=Vulkan scale=1 linear=1 presents=90 mean_ms=7.674 p95_ms=20.010 p99_ms=135.276 thread_cpu_ms=0.385
-COMPARE api=Vulkan scale=4 linear=0 presents=90 mean_ms=8.352 p95_ms=12.386 p99_ms=182.424 thread_cpu_ms=0.277
-COMPARE api=Vulkan scale=4 linear=1 presents=90 mean_ms=7.448 p95_ms=12.490 p99_ms=76.129 thread_cpu_ms=0.309
-COMPARE api=Vulkan scale=8 linear=0 presents=90 mean_ms=13.387 p95_ms=24.254 p99_ms=64.130 thread_cpu_ms=0.337
-COMPARE api=Vulkan scale=8 linear=1 presents=90 mean_ms=18.812 p95_ms=32.256 p99_ms=61.608 thread_cpu_ms=0.291
+COMPARE api=SDL scale=8 linear=1 presents=90 mean_ms=323.064 p95_ms=2646.682 p99_ms=4749.264 thread_cpu_ms=31.766
+COMPARE api=Vulkan scale=1 linear=0 presents=90 mean_ms=2.627 p95_ms=8.594 p99_ms=16.830 thread_cpu_ms=0.442
+COMPARE api=Vulkan scale=1 linear=1 presents=90 mean_ms=2.607 p95_ms=5.369 p99_ms=22.121 thread_cpu_ms=0.414
+COMPARE api=Vulkan scale=4 linear=0 presents=90 mean_ms=4.885 p95_ms=8.909 p99_ms=33.138 thread_cpu_ms=0.353
+COMPARE api=Vulkan scale=4 linear=1 presents=90 mean_ms=5.171 p95_ms=9.678 p99_ms=15.997 thread_cpu_ms=0.369
+COMPARE api=Vulkan scale=8 linear=0 presents=90 mean_ms=8.452 p95_ms=11.988 p99_ms=32.081 thread_cpu_ms=0.318
+COMPARE api=Vulkan scale=8 linear=1 presents=90 mean_ms=10.973 p95_ms=15.184 p99_ms=25.888 thread_cpu_ms=0.356

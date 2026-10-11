@@ -1,4 +1,12 @@
-## Mega Man Zero Native 0.2.0-test.1
+## Mega Man Zero Native 1.0.0-rc.1
+
+Release Candidate ARM64 com backend Vulkan e fallback SDL, controles multitouch editáveis, macro remapeável, FPS/frametime e filtros CRT, scanlines, LCD e monocromático. Durante o jogo, abra **AJUSTES** para alterar vídeo e controles; as preferências são salvas.
+
+Upscale até 8× mantém o framebuffer original 240×160. 90/120/ilimitado permanecem limitados à produção original de aproximadamente 59,73 frames/s; não há aceleração ou interpolação artificial.
+
+**Ainda não é Final:** núcleo Vulkan e jogo recompilado testados no Linux; Vulkan, áudio, controles, retomada e estabilidade desta versão aguardam comprovação em Android real. [Relatório técnico e limitações](validation/rc1/NATIVE-REPORT.md). O APK não inclui ROM/BIOS. [Releases](https://github.com/silasquercloud/MegamenZerorecomp/releases).
+
+### Histórico: 0.2.0-test.1
 
 [Baixar APK ARM64](https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.0-test.1/MegaManZeroNative-0.2.0-test.1-arm64-v8a.apk) • [Prerelease](https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.0-test.1)
 

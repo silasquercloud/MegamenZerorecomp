@@ -1,0 +1,25 @@
+cpu_backend=static-recompiled
+MMZ_BOOT_07 — CPU/bus/dispatch recompilados inicializados
+scanline_backend=HLE (tile-span native-color composition)
+save_config source=game-config type=SRAM size=32768 (detected=SRAM signature="SRAM_V" @ 0x290BA8)
+self_heal_recompile=DISABLED (build default - pure Stage-1 interpreter bridge this session)
+MMZ_BOOT_06 — SDL VIDEO inicializado; áudio/controller verificados (erros acima)
+MMZ_BOOT_08 — Janela e renderer SDL criados
+host_window: renderer=opengl flags=0x0000000a vsync=no scaler=nearest
+host_window: open display=0 mode=800x600@0Hz
+host_window: touch policy=none claims=0x0 pad=hidden(default) emulation=off px_per_mm=3.78 insets=0,0,0,0
+[gbarecomp:runtime] present-in-place ON (frame-boundary resume misses eliminated structurally; GBARECOMP_PRESENT_IN_PLACE=0 to disable)
+MMZ_VIDEO cap_requested=0 effective_max=59.7275 simulation_pacer=unchanged
+host_window: presentation drawable=720x480 output=720x480 window=720x480 viewport=0,0 240x160 logical=240x160 layout=0,0 720x480
+MMZ_BOOT_09 — Primeiro framebuffer GBA apresentado; frame=1
+MMZ_PHASE guest_ms=2.158 ppu_ms=0.008 audio_ms=0.011 input_ms=0.012 pacer_ms=13.379 interp_total=0 misses=0 p95=20.474 p99=24.453 acquire_ms=0.000 upload_ms=0.000 submit_ms=0.000 effect_ms=0.000
+MMZ_PERF render_fps=61.23 simulation_fps=63.21 frame_ms=16.33 peak_ms=24.45 cpu_ms_per_present=2.66 render_submit_vsync_ms=1.99
+MMZ_PHASE guest_ms=1.549 ppu_ms=0.009 audio_ms=0.007 input_ms=0.009 pacer_ms=13.355 interp_total=0 misses=0 p95=19.815 p99=22.036 acquire_ms=0.000 upload_ms=0.000 submit_ms=0.000 effect_ms=0.000
+MMZ_PERF render_fps=58.22 simulation_fps=58.22 frame_ms=17.18 peak_ms=34.70 cpu_ms_per_present=2.65 render_submit_vsync_ms=2.82
+[frame-phase] dumped 600 frames -> sdl-final-phases.csv
+[idle] elided 8148764 loop iterations (114082696 cycles) over 459457 skip ops across 3 site(s)
+bounded_window start_frame=0 end_frame=600 presented=600 view_width=240 uncapped=0 seconds=10.121951 guest_fps=59.277 present_fps=59.277
+
+final_pc=0x080004ea unmapped=0 io_unhandled=0 steps=34 cycles=0 ppu_vcount=160 ppu_frames=600 frames_presented=600
+pal_nonzero=1024/1024 vram_nonzero=93614/98304 oam_nonzero=256/1024
+self_heal_coverage=FULLY_STATIC dispatch_misses=0 interpreted_insns=0 healed_native=0
