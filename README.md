@@ -1,5 +1,9 @@
 ## Mega Man Zero Native 0.2.0-test.1
 
+[Baixar APK ARM64](https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.0-test.1/MegaManZeroNative-0.2.0-test.1-arm64-v8a.apk) • [Prerelease](https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.0-test.1)
+
+SHA-256: `7cad474c19fa376e5d1ac87a4a192b302244783a02d839e0f80e6359c2eaf710`.
+
 A integração Android corrige o argumento de boot rejeitado, inclui logs persistentes/exportáveis e um launcher retrato com artes locais adaptadas da referência. Importe sua ROM USA rev. 0 e BIOS original; os dumps não são distribuídos.
 
 Teste nativo Linux chegou à fase inicial em 12.000 frames com entrada roteirizada. Isso não comprova jogabilidade ARM64 em aparelho Android. Consulte PROGRESS.md para cobertura estática, limitações e resultados atuais.

@@ -54,3 +54,13 @@ Ainda faltam validação de instalação, boot e gameplay em dispositivo, contro
 - Teste real Linux do MESMO corpus: antigo argumento rejeitado com exit 1; boot corrigido executou BIOS LLE + ROM e gerou framebuffer CAPCOM em 120 frames, zero dispatch misses/instruções interpretadas. 12.000 frames com entrada roteirizada chegaram à fase inicial com Zero visível. Nesse percurso houve 12 misses/78 instruções no fallback upstream; não é cobertura 100% estática. Nenhum emulador convencional substituiu a arquitetura.
 - Screenshots desses testes são framebuffers GBA gerados no Linux, NÃO capturas do APK Android. Android SDL/superfície, áudio real, touch/gamepad e save/reload no aparelho ainda precisam de validação.
 - Seis testes existentes passaram (ARM, Thumb, PPU, áudio, configuração de save, toque). APK ARM64 compilou com C++/JNI e tabelas jogo/BIOS, assinatura de desenvolvimento, alinhamento ELF/ZIP 16 KiB, recursos gráficos presentes e sem dumps ROM/BIOS. Recursos públicos incluem vetores e duas ilustrações WebP locais.
+
+### Publicação 0.2.0-test.1 confirmada
+
+- Fonte compilada: `bff8c5272ef1f5590681a85cd465c7eb9ecbccfa` (`codex/android-arm64`).
+- APK: 7.202.880 bytes; SHA-256 `7cad474c19fa376e5d1ac87a4a192b302244783a02d839e0f80e6359c2eaf710`.
+- GitHub Actions: https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38127501507 — sucesso. O job verificou checksum, ELF ARM64/16 KiB, assinatura e zipalign, depois publicou o APK pré-compilado. Não representa um rebuild público do corpus privado.
+- Prerelease pública: https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v0.2.0-test.1
+- APK HTTPS: https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v0.2.0-test.1/MegaManZeroNative-0.2.0-test.1-arm64-v8a.apk
+- Download público realizado novamente, SHA-256 idêntico ao APK local. Avisos de artes/fonte presentes no APK final. Mesma chave de teste de 0.1 para permitir atualização preservando arquivos privados.
+- Tentativa Android adicional: SDK Emulator e imagem Google APIs 30 x86_64 instalados, emulador iniciado sem KVM com `-accel off`, ADB conectado. A imagem anuncia ARM64 e `libndk_translation.so`. Porém o boot do sistema não disponibilizou o serviço `package`; instalação retornou `Can't find service: package`. Após mais de 15 minutos de inicialização por software, não houve `sys.boot_completed=1`. Portanto não foram validados launcher renderizado/toques, superfície Android, áudio físico, gameplay Android ou save/reload. Não há screenshot do APK apresentada como aprovada. Framebuffers em validation/ são Linux e estão identificados.
