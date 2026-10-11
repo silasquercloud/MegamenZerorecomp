@@ -93,3 +93,13 @@ Ainda faltam validação de instalação, boot e gameplay em dispositivo, contro
 - Testes SDL (escala/filtros/proporções/caps), estado multitouch/macro, efeitos, seis testes upstream, regressão de boot e Vulkan passaram. Relatório e resultados em validation/rc1/.
 - GitHub Actions 38153319029: testes Vulkan/controles/filtros e compilação NDK ARM64 dos componentes públicos passaram. Full APK usa corpus privado e build local; registro de runner privado recebeu 403. Não apresentar CI parcial como rebuild completo.
 - Nenhum dispositivo ADB disponível. Final exige validação real de gameplay, áudio físico, controles/macro, saves, troca de API, pausa/retomada e estabilidade. Publicar como prerelease RC, mantendo pendências explícitas.
+
+### Publicação RC confirmada
+
+- Fonte compilada `5e62f3e3da80d422638523927acae3de571a6741`; Gradle/C++ passou em 3m04s; versionCode 4 / 1.0.0-rc.1.
+- APK 7.704.712 bytes, SHA-256 `d5365cebc694abea1944aedc156c226b8b83d3ef2e5d6661cac216e471bffa24`; assinatura v2 pela chave de teste existente, páginas de 16 KB e ausência de dumps verificados. As seis artes de controles foram localizadas pelo mapa de recursos AAPT e verificadas como PNGs não vazios.
+- CI fonte https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38185290401 passou testes Vulkan/controles/filtros e compilação ARM64 dos componentes públicos.
+- Publicação https://github.com/silasquercloud/MegamenZerorecomp/actions/runs/38185516505 passou checksums, ELF/ABI, assinatura e alinhamento e publicou os oito anexos. Primeira tentativa detectou corretamente o ZIP de logs omitido por .gitignore; corrigido em ee4eaa0 sem alterar APK/checksums.
+- Prerelease pública: https://github.com/silasquercloud/MegamenZerorecomp/releases/tag/android-v1.0.0-rc.1
+- APK: https://github.com/silasquercloud/MegamenZerorecomp/releases/download/android-v1.0.0-rc.1/MegaManZeroNative-1.0.0-rc.1-arm64-v8a.apk
+- Download público HTTPS comparado byte a byte com o APK local: idêntico. Relatório, logs, símbolos, screenshot Linux claramente identificado e SHA256SUMS anexados. Permanecem os critérios Android real para promoção a Final; não foi declarada eliminação da lentidão física nem FPS real acima de ~60.
