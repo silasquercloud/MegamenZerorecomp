@@ -22,5 +22,13 @@ set_source_files_properties("${GAME_SRC}/main.cpp" PROPERTIES COMPILE_DEFINITION
 set_source_files_properties(${GAME_CODE} PROPERTIES COMPILE_OPTIONS "-O1;-g0")
 target_include_directories(main PRIVATE "${GAME_SRC}" "${GBARECOMP_ROOT}/src/debug" "${GBARECOMP_ROOT}/src/gba" "${GBARECOMP_ROOT}/src/runtime" "${GBARECOMP_ROOT}/src/armv4t")
 target_link_libraries(main PRIVATE "-Wl,--start-group" gbarecomp_runtime gbarecomp_debug gbarecomp_gba gbarecomp_armv4t "-Wl,--end-group" SDL2::SDL2)
+# The runtime owns SDL_Renderer2 glue; recomp-ui supplies the single ImGui
+# core, SDL platform backend and settings model through its supported helper.
+include("${GBARECOMP_RUNTIME_UI_ROOT}/recomp_ui.cmake")
+add_library(mmz_runtime_ui STATIC)
+set_target_properties(mmz_runtime_ui PROPERTIES POSITION_INDEPENDENT_CODE ON)
+recomp_target_launcher_ui(mmz_runtime_ui CONSOLE gba)
+target_link_libraries(mmz_runtime_ui PUBLIC SDL2::SDL2)
+target_link_libraries(main PRIVATE mmz_runtime_ui)
 target_compile_definitions(main PRIVATE GBARECOMP_DEFAULT_DEBUG_PORT=19862 GBARECOMP_WINDOW_TITLE="Mega Man Zero Native" GBARECOMP_DEFAULT_GAME_CONFIG="variants/megaman_zero/game.toml")
 target_link_options(main PRIVATE "-Wl,--no-undefined" "-Wl,-z,max-page-size=16384")

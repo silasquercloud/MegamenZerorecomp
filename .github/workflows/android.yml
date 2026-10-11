@@ -42,7 +42,9 @@ jobs:
       - name: Generate verified native corpus
         run: python3 tools/generate.py --rom "$MMZ_ROM_PATH" --bios "$MMZ_BIOS_PATH"
       - name: Build, verify ABI, signature and alignment
-        run: bash tools/build-android.sh
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: GBARECOMP_VERSION_NAME="${RELEASE_TAG#android-v}" bash tools/build-android.sh
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: MegaManZeroNative-arm64

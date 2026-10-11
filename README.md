@@ -1,6 +1,6 @@
 # Mega Man Zero Native — Android ARM64
 
-Port em desenvolvimento do [MegaManZeroRecomp](https://github.com/mstan/MegaManZeroRecomp), usando o runtime [gbarecomp](https://github.com/mstan/gbarecomp). Consulte [PROGRESS.md](PROGRESS.md) para resultados e limitações reais; ainda não há APK validado para download.
+Port em desenvolvimento do [MegaManZeroRecomp](https://github.com/mstan/MegaManZeroRecomp), usando o runtime [gbarecomp](https://github.com/mstan/gbarecomp). O APK de teste `0.1.0-test.1` foi compilado e validado como pacote ARM64; gameplay em dispositivo ainda não foi testado. Consulte [PROGRESS.md](PROGRESS.md) e [Releases](https://github.com/silasquercloud/MegamenZerorecomp/releases).
 
 ## Build
 
@@ -13,7 +13,7 @@ python3 tools/generate.py --rom /caminho/megaman_zero_usa.gba --bios /caminho/gb
 bash tools/build-android.sh
 ```
 
-O APK será `android/app/build/outputs/apk/release/app-release.apk`, para Android 9+ ARM64. SDK 35, NDK 27.1.12297006, CMake 3.22.1, AGP 8.10.1 e Gradle 8.11.1. O wrapper e os downloads de ferramentas usam checksums oficiais e TLS verificado. A release de teste usa a chave de desenvolvimento local quando não há configuração de assinatura; mantenha uma chave estável para atualizações futuras.
+O APK será `android/app/build/outputs/apk/release/app-release.apk`, para Android 9+ ARM64, com bibliotecas alinhadas para páginas de 16 KiB. SDK 35, NDK 27.1.12297006, CMake 3.22.1, AGP 8.10.1 e Gradle 8.11.1. O wrapper e os downloads de ferramentas usam checksums oficiais e TLS verificado. A release de teste usa a chave de desenvolvimento local quando não há configuração de assinatura; mantenha uma chave estável para atualizações futuras. Licenças upstream são incluídas no APK e podem ser lidas em Créditos e versão.
 
 Entradas necessárias para gerar o código e para importar no aplicativo:
 

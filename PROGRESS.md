@@ -13,19 +13,25 @@
 | Verificação | Resultado |
 |---|---|
 | ROM enviada | 8 MiB e SHA-1 exato confirmado |
+| BIOS enviada | 16 KiB e SHA-1 exato confirmado; 770 funções BIOS recompiladas |
 | Recompiler host | Compilado; gerou 16 shards, dispatch e símbolos do jogo |
 | CPU ARM/Thumb, PPU, áudio, save config, toque | 6 executáveis de teste passaram, 0 falhas |
 | C++ gerado para ARM64 | 18 unidades passaram pela verificação do compilador NDK; não é link do jogo |
-| Runtime ARM64 + SDL + UI/mods | Biblioteca estática compilada com NDK; não é carregamento JNI em dispositivo |
+| Runtime ARM64 + SDL + UI/mods | `libmain.so` linkada com jogo e BIOS nativos, sem símbolos indefinidos |
+| Entrada SDL/JNI | `SDL_main`, `setSafeInsets`, `setDisplayDpi` e tabelas de dispatch do jogo/BIOS presentes no ELF; carregamento não testado em dispositivo |
 | Gradle + launcher/Java/recursos/manifest | `projects` e `compileReleaseJavaWithJavac` passaram |
 | Setup repetido | Ferramentas e testes reinstanciados sem alterar fontes upstream |
-| APK compilado/assinado/alinhado | Não executado: falta BIOS para gerar o corpus LLE |
+| APK compilado/assinado/alinhado | Passou: ARM64, assinatura v2, ELF/ZIP 16 KiB e nenhum dump ROM/BIOS no pacote |
 | Instalável / JNI carregando / runtime inicializando | Não testado; ADB sem dispositivos conectados |
 | ROM/BIOS reconhecidas no Android / gameplay / controles / áudio / saves | Não testados em dispositivo |
-| Actions / release / download | Workflow implementado; não executado e nenhum APK publicado |
+| Actions / release / download | Workflow implementado e não executado; publicação direta da prerelease em andamento |
 
 Java inicialmente disponível era somente JRE; instalado JDK completo 17.0.20.1+1 com SHA-256 oficial. Wrapper do exemplo Android era de outra versão; substituído pelo wrapper/scripts oficiais 8.11.1 e verificado seu checksum. Proxy Java configurado sem expor credenciais e sem desativar TLS.
 
-## Próximo bloqueio
+## APK e limitações
 
-A BIOS GBA original de 16.384 bytes, SHA-1 `300c20df6731a33952ded8c436f7f186d25d3492`, ainda não foi fornecida. Depois dela: gerar BIOS, compilar/linkar o APK real, verificar ABI/assinatura/alinhamento e testar em dispositivo. A API GitHub permite ler o repositório e indica escrita; a consulta de runners retorna 403, portanto não foi possível confirmar runner disponível. Nenhum link de instalação foi inventado.
+APK `0.1.0-test.1`, versionCode 1, Android 9+ ARM64: 6.704.324 bytes. SHA-256 `37fdc85734ee7a9481475f18e1f71509f4deec28df2d28a9f7ac284b42565181`. O build usa a chave de desenvolvimento local; chave privada e dumps não são versionados nem publicados.
+
+O primeiro link completo identificou a ausência do provedor ImGui/modelo de configurações; corrigido pelo helper oficial `recomp_target_launcher_ui()` em biblioteca separada, reutilizando o corpus compilado. NDK configurado com `ANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON` para todas as bibliotecas. A compilação final e verificações de pacote passaram.
+
+Ainda faltam validação de instalação, boot e gameplay em dispositivo, controles/áudio/saves/pausa reais e overlay de armas tematizado. A consulta de runners GitHub retorna 403; o workflow self-hosted não foi executado. A prerelease deve descrever essas limitações, sem tratar o build como prova de gameplay.

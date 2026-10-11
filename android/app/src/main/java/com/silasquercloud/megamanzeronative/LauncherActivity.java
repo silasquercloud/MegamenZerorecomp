@@ -72,9 +72,26 @@ public final class LauncherActivity extends Activity {
         button("Controles", () -> info("Controles", "O runtime fornece D-Pad, A, B, L, R, Start e Select multitouch e suporte SDL a gamepads Bluetooth/USB. Use o editor de toque do runtime para ajustar o layout. A ação de cada botão depende dos controles definidos no jogo. Ícones dinâmicos de armas ainda não estão implementados."));
         button("Desempenho", () -> info("Desempenho", "A cadência é controlada pelo runtime GBA, sem aceleração de lógica. A compilação estática é o caminho principal; endereços não cobertos usam o fallback de interpretação do upstream e são registrados nos logs. Desempenho neste dispositivo requer teste de gameplay."));
         button("Logs e diagnóstico", this::logs);
-        button("Créditos e versão", () -> info("Créditos e versão", "Mega Man Zero Native 0.1.0-dev\nMegaManZeroRecomp, gbarecomp e recomp-ui: Matthew Stanley e colaboradores. Licença PolyForm Noncommercial 1.0.0. SDL: licença zlib. Mega Man Zero e os arquivos originais pertencem aos respectivos titulares. Este APK não contém ROM ou BIOS."));
+        button("Créditos e versão", this::credits);
     }
     private void info(String title, String message) { page(title); text(message, 17, Color.LTGRAY); }
+    private void credits() {
+        String version;
+        try { version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName; }
+        catch (android.content.pm.PackageManager.NameNotFoundException error) { version = "indisponível"; }
+        info("Créditos e versão", "Mega Man Zero Native " + version + "\nMegaManZeroRecomp, gbarecomp e recomp-ui: Matthew Stanley e colaboradores. Licença PolyForm Noncommercial 1.0.0. SDL: licença zlib. Mega Man Zero e os arquivos originais pertencem aos respectivos titulares. Este APK não contém ROM ou BIOS.");
+        for (String component : new String[]{"MegaManZeroRecomp", "gbarecomp", "recomp-ui", "SDL"}) {
+            button("Licença: " + component, () -> {
+                String filename = component.equals("SDL") ? "LICENSE.txt" : "LICENSE";
+                try (InputStream input = getAssets().open("payload/licenses/" + component + "/" + filename)) {
+                    ByteArrayOutputStream output = new ByteArrayOutputStream();
+                    byte[] buffer = new byte[8192]; int read;
+                    while ((read = input.read(buffer)) != -1) output.write(buffer, 0, read);
+                    info("Licença: " + component, output.toString("UTF-8"));
+                } catch (IOException error) { info("Licença: " + component, "Não foi possível ler o texto da licença."); }
+            });
+        }
+    }
     private void importPage(boolean bios) {
         page(bios ? "Importar BIOS" : "Importar ROM");
         text(bios ? "BIOS GBA original: 16.384 bytes. SHA-1 " + BIOS_SHA : "Mega Man Zero USA revisão 0: 8.388.608 bytes. SHA-1 " + ROM_SHA, 16, Color.LTGRAY);
