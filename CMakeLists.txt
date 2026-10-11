@@ -15,6 +15,7 @@ if(NOT GAME_CODE OR NOT EXISTS "${GBARECOMP_GENERATED_BIOS_DIR}/bios_recompiled.
     message(FATAL_ERROR "Faltam fontes nativos gerados. Execute tools/generate.py com sua ROM e BIOS verificadas. Não será produzido APK vazio.")
 endif()
 add_subdirectory("${GBARECOMP_ROOT}" engine EXCLUDE_FROM_ALL)
+include(android/native/instrument-runtime.cmake)
 set(GAME_SRC "${CMAKE_CURRENT_SOURCE_DIR}/MegaManZeroRecomp/src")
 add_library(main SHARED android/native/entry.cpp "${GAME_SRC}/main.cpp"
     "${GAME_SRC}/mmz_extended_view.cpp" "${GAME_SRC}/mods/mmz_adaptive_view_plugin.cpp" ${GAME_CODE})

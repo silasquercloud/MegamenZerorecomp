@@ -2,6 +2,8 @@
 export ANDROID_HOME=${ANDROID_HOME:-/workspace/android-sdk}
 export ANDROID_USER_HOME=${ANDROID_USER_HOME:-/workspace/.android}
 export GRADLE_USER_HOME=${GRADLE_USER_HOME:-/workspace/.gradle}
+export MMZ_ROM_PATH=${MMZ_ROM_PATH:-/workspace/private-assets/megaman_zero_usa.gba}
+export MMZ_BIOS_PATH=${MMZ_BIOS_PATH:-/workspace/private-assets/gba_bios.bin}
 if [[ -z ${JAVA_HOME:-} && -x /workspace/.mmz-jdk/jdk-17.0.20.1+1/bin/javac ]]; then
     export JAVA_HOME=/workspace/.mmz-jdk/jdk-17.0.20.1+1
 fi

@@ -16,9 +16,9 @@
         <meta-data android:name="gbarecomp.payload_version" android:value="${gbaPayloadVersion}"/>
         <meta-data android:name="gbarecomp.setup_note" android:value="${gbaSetupNote}"/>
         <meta-data android:name="gbarecomp.gyro" android:value="${gbaGyro}"/>
-        <activity android:name="com.silasquercloud.megamanzeronative.LauncherActivity" android:exported="true">
+        <activity android:name="com.silasquercloud.megamanzeronative.LauncherActivity" android:screenOrientation="portrait" android:exported="true">
             <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
         </activity>
-        <activity android:name="org.gbarecomp.GbaGameActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation|density"/>
+        <activity android:name="com.silasquercloud.megamanzeronative.GameActivity" android:exported="false" android:screenOrientation="sensorLandscape" android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation|density"/>
     </application>
 </manifest>

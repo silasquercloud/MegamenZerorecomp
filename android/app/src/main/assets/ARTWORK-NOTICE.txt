@@ -1,0 +1,3 @@
+Launcher illustration: locally generated adaptation of the visual reference supplied by the project owner for this release. Independent PNG/WebP character/scene layers, original technological panel decoration and local vector icons. No ROM/BIOS data.
+Mega Man, Mega Man Zero and Zero are trademarks/characters of their respective owners (Capcom). This unofficial noncommercial project does not claim ownership or endorsement. Artwork use does not grant rights to the original game or trademarks.
+Logo glyph outlines derive from DejaVu Sans Bold Oblique; see DejaVu-LICENSE.txt.
